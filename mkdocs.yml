@@ -14,3 +14,10 @@ theme:
     palette:
         primary: teal
         accent: pink
+markdown_extensions:
+    - admonition
+    - codehilite
+    - toc:
+        permalink: true
+    - pymdownx.superfences
+    - pymdownx.tabbed
