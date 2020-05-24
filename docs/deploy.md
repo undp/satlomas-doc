@@ -110,7 +110,14 @@ sudo apt-get install \
 
 ### Nginx
 
-(...)
+Nginx se utiliza para servir tanto el backend (API y administrador) como el
+frontend (sitio web de la plataforma).
+
+Instale Nginx desde los repositorios de Ubuntu:
+
+```bash
+sudo apt install nginx
+```
 
 
 ## Backend
@@ -282,3 +289,242 @@ web:
 ```bash
 npm run build
 ```
+
+## Configuración de servicios
+
+!!! tip "Más información"
+
+    Esta sección de la documentación está basada en la guía [How To Set Up
+    Django with Postgres, Nginx, and Gunicorn on Ubuntu 18.04][1], de Digital
+    Ocean. Para más información para depurar los servicios, puede
+    consultarla.
+
+  [1]: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
+
+
+### Backend
+
+Comience creando un nuevo archivo para el socket del servicio del backend:
+
+```bash
+sudo nano /etc/systemd/system/gunicorn.service
+```
+
+Copie lo siguiente dentro del archivo:
+
+```
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+```
+
+Guarde y ciérrelo.
+
+Para el siguiente paso es necesario que verifique la ruta del entorno virtual
+del backend. Desde el directorio del código del backend, ejecute el siguiente
+comando:
+
+```
+pipenv --venv
+```
+
+Tome nota de la ruta que devuelve el comando.
+
+Ahora, cree un nuevo archivo para el servicio. El nombre de archivo del
+servicio debería coincidir con el del socket, a excepción de la extensión:
+
+```bash
+sudo nano /etc/systemd/system/gunicorn.service
+```
+
+Copie el siguiente contenido:
+
+```
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/satlomas-back
+ExecStart=/home/ubuntu/.local/share/virtualenvs/satlomas-back-XVGhZdP0/bin/gunicorn \
+          --access-logfile - \
+          --timeout 600 \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          satlomas.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Ajuste `WorkingDirectory` a la ruta *absoluta* del repositorio clonado del
+backend. Luego, ajuste la ruta absoluta de `ExecStart` a la del entorno
+virtual de Pipenv, agregando al final `/bin/gunicorn`. También será necesario
+que defina el `User` y `Group` con el que se ejecutará el proceso. Este
+usuario debería tener permisos para poder acceder al repositorio del backend.
+
+Puede ajustar también la cantidad de *workers* y el timeout permitido, o
+agregar otras opciones de Gunicorn si es necesario.
+
+Finalmente, puede iniciar y activar el servicio. Esto creará un archivo
+`/run/gunicorn.sock` y se iniciará el servidor. Cuando se realiza una
+conexión al socket, systemd automaticamente inicia el servicio
+`gunicorn.service` para manejar el pedido.
+
+```bash
+sudo systemctl start gunicorn.socket
+sudo systemctl enable gunicorn.socket
+```
+
+### Frontend
+
+De manera similar, para el servidor web del frontend será administrador por
+systemd.
+
+Cree un nuevo archivo para el servicio del frontend:
+
+```bash
+sudo nano /etc/systemd/system/satlomas-front.service
+```
+
+y copie el siguiente contenido:
+
+```
+[Unit]
+Description=Platform frontend next.js app
+After=network.target
+
+[Service]
+Environment=NODE_ENV=production
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/satlomas-front
+ExecStart=/usr/bin/node server.js
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Ajuste `WorkingDirectory` a la ruta *absoluta* del repositorio clonado del
+frontend. También será necesario que defina el `User` y `Group` con el que se
+ejecutará el proceso. Este usuario debería tener permisos para poder acceder
+al repositorio del backend.
+
+Finalmente, puede iniciar y activar el servicio.
+
+```bash
+sudo systemctl start satlomas-front.service
+sudo systemctl enable satlomas-front.service
+```
+
+### Nginx
+
+A modo ejemplo, se presentan dos archivos de configuración para Nginx, para
+servir el backend y frontend respectivamente.
+
+En este ejemplo, se asume que se tienen registrado el dominio `satlomas.com`,
+y dos registros A para los subdominios:
+
+  1. `api.satlomas.com`: Backend
+  2. `app.satlomas.com`: Frontend
+
+Cree un nuevo archivo `/etc/nginx/sites-available/satlomas-back`
+
+```bash
+sudo nano /etc/nginx/sites-available/satlomas-back
+```
+
+y copie dentro de éste el siguiente contenido:
+
+```
+server {
+  server_name api.satlomas.com;
+
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+    root /home/ubuntu/satlomas-back;
+  }
+
+  location / {
+    include proxy_params;
+    proxy_pass http://unix:/home/ubuntu/satlomas-back/satlomas.sock;
+
+    proxy_connect_timeout       600;
+    proxy_send_timeout          600;
+    proxy_read_timeout          600;
+    send_timeout                600;
+  }
+}
+```
+
+Ajuste `server_name` al subdominio que corresponda al backend, y `root` a la
+ruta absoluta del repositorio del backend (en este caso, el repositorio fue
+clonado dentro del directorio *home* del usuario `ubuntu`).
+
+Luego cree otro archivo `/etc/nginx/sites-available/satlomas-front`
+
+```bash
+sudo nano /etc/nginx/sites-available/satlomas-front
+```
+
+y copie lo siguiente:
+
+```
+server {
+    server_name app.satlomas.com;
+
+    location /static/ {
+        root /home/ubuntu/satlomas-front/public;
+    }
+
+    location /_next/static/ {
+        alias /home/ubuntu/satlomas-front/.next/static/;
+    }
+
+    location / {
+      # default port, could be changed if you use next with custom server
+      proxy_pass http://localhost:3000;
+
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection 'upgrade';
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
+
+      # if you have try_files like this, remove it from our block
+      # otherwise next app will not work properly
+      # try_files $uri $uri/ =404;
+    }
+}
+```
+
+Nuevamente, ajuste `server_name` al subdominio correspndiente para el
+frontend, y las ocurrencias de `/home/ubuntu/satlomas-front` a la ruta
+absoluta del repositorio del frontend.
+
+Finalmente, haga enlaces simbólicos de estos dos archivos al directorio
+`/etc/nginx/sites-enabled/` para habilitar los sitios:
+
+```bash
+sudo ln -s /etc/nginx/sites-available/satlomas-back /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/satlomas-front /etc/nginx/sites-enabled/
+```
+
+y reinicie Nginx:
+
+```bash
+sudo systemctl restart nginx
+```
+
+Con esto concluye la implementación de la plataforma. Podrá acceder al
+backend desde `http://api.satlomas.com/`, y al frontend desde
+`https://app.satlomas.com/` (suponiendo que configuró los sitios con esos
+subdominios).
