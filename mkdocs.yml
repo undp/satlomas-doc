@@ -1,5 +1,8 @@
 site_name: SatLomas
 nav:
-    - Home: index.md
-    - About: about.md
+    - Inicio: index.md
+    - Uso: usage.md
+    - Metodología: methodology.md
+    - Desarrollo: development.md
+    - Implementación: deploy.md
 theme: material

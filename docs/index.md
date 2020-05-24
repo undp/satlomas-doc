@@ -1,6 +1,7 @@
-# Welcome to MkDocs
+# SatLomas
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+Esta es la documentación oficial de SatLomas, la plataforma de monitoreo
+satelital del ecosistema de las Lomas.
 
 ## Commands
 
