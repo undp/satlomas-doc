@@ -1,50 +1,160 @@
-# Cum sub
+# Implementación
 
-## Aselli instabilis Alpes
+En esta sección se detallan instrucciones para poder implementar la
+plataforma en producción.  
 
-Lorem markdownum spectatorem interdictae cessere quaedam. Hanc sine que
-laesasque fecundo: est sonus? Sine enim.
+Este documento apunta a *operadores y administradores de sistemas* que
+necesiten preparar la plataforma en un servidor, y por lo tanto se asumen
+conocimientos básciso de manejo de terminal, instalación de paquetes y
+configuración de servicios.  Si Ud. desea levantar una versión local de la
+plataforma en una computadora hogareña o portátil, se recomienda en cambio
+leer las instrucciones detalladas en la sección [Desarrollo](development.md).
 
-Pars fuit abstulit semina de [grandia Erectheus](http://toto.com/) ille sit
-defrenato sanguine Iuppiter coquiturque satis neque tumulo cervos exsanguemque.
-Videt ne veri decoris, hirsuti solverat cumque, cornibus intendens utque? Hanc
-ipse, qui Caeneus qui deum poscit, orbe, pascere primo sit qui optavit.
+En los repositorios se incluyen ejemplos de archivos de configuración cuando
+es apropiado, pero siempre se deben tomar como ejemplos y ajustar si es
+necesario según el entorno.
 
-1. Facioque erat iussit ad omnem extremum mensis
-2. Unde Crantoris
-3. Vosne belua
-4. Iamque dracones concussit quam regnaque credar aetatem
-5. Nomine quem baca vetuit
+Se asume que la plataforma va a ejecutarse en un entorno con la distribución
+**Ubuntu 18.04** instalada.
 
-Mansit parte, a invitaque pio redeuntibus passa celebres eadem. Quem caelo
-terras certamen natant; *pactus* umbra spina usum profectu nondum accipiunt
-arbor!
 
-## Comitantibus quae
+## Dependencias
 
-Cervicis effugiam ramis murus et quam est praemia effundit seminaque, ut
-tenebat, quo ora pectore loquaci, nam. Caput concita, dicenti cervi undis,
-prohibemur inmemor omnia saevus culpa. Fiat quo habenti damno, si sua medio
-factis; non [ferantur](http://necin.net/), destringere ibat!
+La plataforma consiste en un backend, implementado sobre Python, y un
+frontend implementado en Nodejs. Utiliza PostgreSQL como base de datos, y
+Redis como cache y base de datos para la cola de trabajos.
 
-    backlink_wizard_search = bluetoothClipboardSystem / 2;
-    if (deprecated) {
-        type(dvd_recycle, megabyte(707213, compressionSimm));
-        gnu(clipboardInstall, qbe);
-        power_daemon_right(batch, balance_static, softTrojanMenu);
-    }
-    var cloudRetinaFtp = peopleware_flash + refresh * ip_macintosh;
+A continuación se detallan instrucciones para instalar y configurar estas
+dependencias.
 
-Sunt Iovem transferre petuntur esset adparuit Melas, docebo hoc moderante neque
-inspirantque mandata etiamnum fastigiaque longo felices. Pes fallit, nomen
-ungues utque adducor quamvis laquei turis. Sollicitae erat antiquas poteris.
+### PostgreSQL y extensiones (TimescaleDB y PostGIS)
 
-- Sum illinc
-- Saepe fieri
-- Fuit luna vince caede rebus Phoebo sui
-- Albente recentes cruciatibus trabes deficiunt gradumque spumeus
-- Exierat cum plura ima partu umbrosum errent
+> **Nota**: Las instrucciones están pensadas para Ubuntu 18.04.  Puede
+> verificar la [guía de instalación de TimescaleDB](https://docs.timescale.com/latest/getting-started/installation)
+> si está utilizando otro sistema operativo.
 
-Ut Aiacem *mensae*; ait est comitesque ferat flexuque est quem effluxere probat
-moenia: quae non suadet adorat. Suique sis classis carinae loquendi futura. Et
-visa est sic superum pectus concipiunt pater animalia proxima.
+Agregue el siguiente repositorio de PostgreSQL para obtener la últimas
+versiones de los pquetes de PostgreSQL (esto es necesario para versiones de
+Ubuntu menores a 19.04).
+
+```sh
+# `lsb_release -c -s` should return the correct codename of your OS
+echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -c -s)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+```
+
+Agregue el repositorio de TimescaleDB y luego instale TimescaleDB, que al
+hacerlo automaticamente descargará e instalará también la versión correcta
+del servidor de PostgreSQL.
+
+```sh
+# Add TimescaleDBs PPA
+sudo add-apt-repository ppa:timescale/timescaledb-ppa
+sudo apt-get update
+
+# Now install appropriate package for PG version
+sudo apt install timescaledb-postgresql-11
+```
+
+Ajuste (*tuning*) la base de datos para TimescaleDB.
+
+```sh
+sudo timescaledb-tune
+```
+
+Instale la extensión PostGIS 3 para esta versión de PostgreSQL.
+
+```sh
+sudo apt-get install postgresql-11-postgis-3
+```
+
+Reinicie la instancia de PostgreSQL:
+
+```sh
+sudo service postgresql restart
+```
+
+### Python, Redis, GDAL
+
+Instale Python y otras dependencias como GDAL y el servidor de Redis.
+
+```sh
+sudo apt-get install \
+  gdal-bin \
+  gettext \
+  libgdal-dev \
+  libpq-dev \
+  libproj-dev \
+  python3 \
+  python3-dev \
+  python3-pip \
+  redis-server
+```
+
+## Configuración de base de datos
+
+Cree un rol de superusuario para el usuario que está utilizando actualmente.
+Si sabe que va a ejecutar PostgreSQL con otros usuario, por favor reemplaze
+la variable `$USER` como corresponde.
+
+```sh
+sudo -u postgres createuser -s $USER
+```
+
+Cree la base de datos.
+
+```sh
+createdb satlomas
+```
+
+Confiure una contraseña para el usuario que acaba de crear. Por favor,
+ejecute el siguiente comando *reemplazando* `foobar` por una contraseña
+única, dificil de adivinar.
+
+```sh
+psql satlomas -c "ALTER USER $USER WITH PASSWORD 'foobar'"
+```
+
+Agregue las extensiones TimescaleDB y PostGIS a la base de datos creada.
+
+```sh
+psql satlomas -c "CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE"
+psql satlomas -c "CREATE EXTENSION IF NOT EXISTS postgis CASCADE"
+```
+
+### Backend
+
+(agregar instrucciones de clonar repositorio...)
+
+Copie `env.sample` and edit it to suit your needs. See the Configuration
+section above.
+
+```sh
+cp env.sample .env
+```
+
+Install Python dependencies using Pipenv. Install it first if you don't have it:
+
+```
+pip install --user -U pipenv
+pipenv install
+pipenv install django-anymail[mailgun] django-rest-auth[with_social] django-storages[google]
+```
+
+Then inside a pipenv shell (use `pipenv shell`) you should first do the following:
+
+* Run migrations: `./manage.py migrate`
+* Create superuser: `./manage.py createsuperuser`
+
+### Frontend
+
+(agregar instrucciones del repositorio frontend...)
+
+### Nginx
+
+(...)
+
+### Configuración de servicios
+
+(...)
