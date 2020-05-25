@@ -21,9 +21,9 @@ las bandas RGB (rojo, verde y azul) y NIR (infrarrojo cercano), y de 20m para
 el resto de las bandas del infrarrojo. El tiempo de revisita es de
 aproximadamente 10 días.
 
-![]()
+![](img/methodology/sen2-1.png)
 
-![]() ![]()
+![](img/methodology/sen2-2.png)
 
 A partir de la inspección visual, se consensuó con el equipo de EbA Lomas el
 uso de mosaicos bimestrales de escenas de Sentinel-2. En el caso de que haya
@@ -32,7 +32,7 @@ escenas de Sentinel-1. Este sensor es muy utilizado en la práctica para
 detectar inundaciones o edificaciones, dado que permite observar el suelo aún
 con nubosidad.
 
-![]()
+![](img/methodology/sen1-1.png)
 
 Las imágenes de Sentinel-1 y Sentinel-2 se descargaron de los repositorios
 abiertos de Copernicus Open Access Hub.
@@ -42,7 +42,7 @@ Radar Topography Mission), puesto que la información de altitud es relevante
 a la hora de determinar suelo de las Lomas. La resolución espacial de esta
 capa ráster es de 30 m por píxel aproximadamente (1-arc second).
 
-![]()
+![](img/methodology/dem-1.png)
 
 #### Datos vectoriales
 
@@ -157,11 +157,8 @@ herramienta de código abierto Orfeo Toolbox:
 ### Entrenamiento preliminar y evaluación
 
 Para evaluar la importancia de las bandas seleccionadas y los atributos
-extraídos, se entrenó un modelo de cobertura de suelo para una de las áreas
-definidas (AOI 1), que observa la loma de Carabayllo. Las imágenes utilizadas
-corresponden a un mosaico de una fecha en particular.
-
-![]()
+extraídos, se entrenó un modelo de cobertura de suelo para las 4 áreas
+asignadas.
 
 Se anotaron polígonos para las siguientes clases:
 - Suelo de loma natural
@@ -225,6 +222,15 @@ F-score of class   [6] vs all: 0.98004
 
 Global performance, Kappa index: 0.891288
 ```
+
+A continuación se observan las cuatro áreas sobre un mosaico de Sentinel-2 y
+el resultado del clasificador correspondiente.
+
+![](img/methodology/model1.png)
+![](img/methodology/model2.png)
+![](img/methodology/model3.png)
+![](img/methodology/model4.png)
+
 
 ## Modelo de detección de vegetación
 
@@ -293,6 +299,6 @@ en el dataset *Pixel reliability* del producto MOD13Q1.
 Para más información acerca del producto MOD13Q1 se recomienda leer la [Guia
 de Usuario][1].
 
-![]()
+![](img/methodology/vi1.png)
 
   [1]: https://vip.arizona.edu/documents/MODIS/MODIS_VI_UsersGuide_June_2015_C6.pdf
