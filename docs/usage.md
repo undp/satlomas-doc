@@ -76,6 +76,55 @@ Estaciones Meteorológicas.
 
 ### Alertas
 
+#### Diagrama de verificación de regla
+
+```mermaid
+graph TB;
+    inicio([Inicio])-->esAbs{{es absoluto?}};
+    esAbs-- sí -->valAbs[Toma como valor <br />la medicion actual];
+    esAbs-- no -->valRel[Toma como valor <br />la diferencia <br />entre medicion actual y <br />medicion anterior];
+    valAbs-->esValMenorMin{{es valor menor <br />al mínimo valido?}};
+    valRel-->esValMenorMin;
+    esValMenorMin-- sí -->crear[Crear alerta];
+    esValMenorMin-- no -->esValMayorMax[es valor mayor <br />al máximo válido?];
+    esValMayorMax-- sí -->crear;
+    esValMayorMax-- no -->fin([Fin]);
+    crear-->debeNotificar{{debe notificar por mail?}};
+    debeNotificar-- sí -->notificar[Enviar notificación por mail];
+    debeNotificar-- no -->fin;
+    notificar-->fin;
+```
+
+#### Diagrama para reglas de parámetro
+
+```mermaid
+graph LR;
+    inicio([Inicio])-->todas{{en todas las estaciones?}};
+    todas-- sí -->fin([Fin]);
+    todas-- no -->filtrar[Filtra por estación <br />definida en regla];
+    filtrar-->fin;
+```
+
+#### Diagrama para reglas de tipo de ámbito
+
+```mermaid
+graph LR;
+    inicio([Inicio])-->todos{{en todos los tipos de ámbito?}};
+    todos-- sí -->fin([Fin]);
+    todos-- no -->filtrar[Filtra por tipo de ámbito <br />definido en regla];
+    filtrar-->fin;
+```
+
+#### Diagrama para reglas de ámbito
+
+```mermaid
+graph LR;
+    inicio([Inicio])-->todos{{en todos los ámbitos del tipo?}};
+    todos-- sí -->fin([Fin]);
+    todos-- no -->filtrar[Filtra por ámbito <br />definido en regla];
+    filtrar-->fin;
+```
+
 ![](img/admin-alerts1.png)
 
 ### Imágenes
