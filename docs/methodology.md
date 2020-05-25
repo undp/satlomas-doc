@@ -124,7 +124,14 @@ siguiente manera:
 
 A continuación se detallan los rangos de fecha utilizados para los datasets:
 
-(...tabla)
+* *Train*
+  1. 2018-11 al 2018-12
+  2. 2019-03 al 2019-04
+  3. 2019-07 al 2019-08
+* *Test*
+  1. 2019-01 al 2019-02
+  2. 2019-05 al 2019-06
+  3. 2019-09 al 2019-10
 
 Las bandas utilizadas de cada sensor fueron las siguientes:
 * **Sentinel-2**: 10 bandas multiespectrales
@@ -183,6 +190,7 @@ A continuación se muestran las métricas y matrices de confusión de la mejor
 ejecución.
 
 Parámetros:
+
 * Profundidad: 9
 * Árboles: 175
 
@@ -193,7 +201,14 @@ Training performances:
 Confusion matrix (rows = reference labels, columns = produced labels):
 ```
 
-(...matriz)
+|   | 1     | 2     | 3     | 4     | 5     | 6     |
+|---|-------|-------|-------|-------|-------|-------|
+| 1 | 14316 |   798 |   255 |    24 |     0 |     0 |
+| 2 |  1035 | 12051 |  2082 |   105 |     0 |   120 |
+| 3 |    90 |   978 | 13623 |   324 |    42 |   336 |
+| 4 |     9 |   402 |  1581 | 13362 |    21 |    18 |
+| 5 |     0 |     0 |     0 |     0 | 15393 |     0 |
+| 6 |     0 |     0 |   129 |    12 |     6 | 15246 |
 
 ```
 Precision of class [1] vs all: 0.926602
