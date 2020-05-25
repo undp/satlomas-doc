@@ -6,7 +6,6 @@ nav:
     - Inicio: index.md
     - Uso: usage.md
     - Metodología: methodology.md
-    - Desarrollo: development.md
     - Implementación: deploy.md
 theme:
     name: material
