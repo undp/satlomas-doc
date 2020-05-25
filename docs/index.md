@@ -17,9 +17,6 @@ La última versión se encuentra disponible [aquí][2].
 * [Metodología](methodology.md): Documento donde se describen las fuentes de
 datos y procesos utilizados para generar los mapas.
 
-* [Desarrollo](development.md): En caso de que quiera desarrollar o hacer cambios en el código fuente de la
-plataforma, puede ver leer más en la sección [Desarrollo](development.md).
-
 * [Implementación](deploy.md): Documento que detalla nstrucciones sobre cómo
   implementar la plataforma en un entorno de producción, destinado para
   administradores de sistemas.
