@@ -11,13 +11,13 @@ La última versión se encuentra disponible [aquí][2].
 
 ## Secciones
 
-* [Uso](usage.md): Guía para utilizar y administrar la herramienta, tanto para
-  usuarios como administradores.
+* [Guía de Uso](usage.md): Guía para utilizar y administrar la herramienta,
+  tanto para usuarios como administradores.
 
 * [Metodología](methodology.md): Documento donde se describen las fuentes de
-datos y procesos utilizados para generar los mapas.
+  datos y procesos utilizados para generar los mapas.
 
-* [Implementación](deploy.md): Documento que detalla nstrucciones sobre cómo
+* [Implementación](deploy.md): Documento que detalla instrucciones sobre cómo
   implementar la plataforma en un entorno de producción, destinado para
   administradores de sistemas.
 

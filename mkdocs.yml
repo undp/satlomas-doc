@@ -4,7 +4,7 @@ site_url: https://dymaxionlabs.github.io/satlomas-docs/
 repo_url: https://github.com/dymaxionlabs/satlomas-docs/
 nav:
     - Inicio: index.md
-    - Uso: usage.md
+    - Guía de Uso: usage.md
     - Metodología: methodology.md
     - Implementación: deploy.md
 theme:

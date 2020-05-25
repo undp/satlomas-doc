@@ -1,4 +1,4 @@
-# Uso
+# Guía de Uso
 
 En esta sección se describen las diferentes vistas que conforman el frontend
 de la plataforma, y de qué manera se pueden utilizar las herramientas
