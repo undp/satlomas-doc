@@ -463,26 +463,82 @@ En la sección Perfil, el usuario puede:
 
 ## Administradores
 
+Los administradores tienen la capacidad de registrar nuevos usuarios y
+administradores, revocar el acceso a usuarios existentes, administrar los
+ámbitos y las estaciones meteorológicas.
+
+Puede acceder al panel administrador de SatLomas ingresando aquí:
+
+- [https://api.satlomas.dymaxionlabs.com/admin](https://api.satlomas.dymaxionlabs.com/admin)
+
+Para entrar deberá ingresar el mismo nombre de usuario y contraseña con la
+que ingresa al panel de usuario de SatLomas.
+
 ### Panel de administración
+
+Desde el panel de administración podrá acceder a los diferentes modelos de
+las aplicaciones internas de la plataforma. Muchas de ellas son de solo
+lectura ya que no están pensadas para ser modificadas desde el panel
+administador, pero a efectos de depuración y testeo se mantuvieron.
 
 ![](img/backend-admin1.png)
 
 ### Usuarios
 
+Desde la sección Usuarios puede crear nuevos usuarios, modificar alguno
+existente o desactivarlo.
+
 ![](img/backend-admin2.png)
+
+Un usuario tiene 2 tipos de permisos:
+
+- **Activo**: Determina si el usuario está activo o no. Puede desmarcar esta
+  opcion sobre un usuario existente para desactivarlo en vez de borrarlo.
+- **Es staff**: Indica si el usuario puede entrar al sitio de administrador.
+  Un administrador tiene este casillero activado.
+
 ![](img/backend-admin3.png)
+
+En caso de querer registrar un nuevo usuario, deberá escribir un nombre de
+usuario y una contraseña.
+
 ![](img/backend-admin4.png)
 
 ### Ámbitos
 
+En la sección de Ámbitos (*Scopes*) se pueden listar, modificar, eliminar o
+agregar nuevos ámbitos.
+
 ![](img/backend-admin5.png)
+
+Al editar un ámbito, o crear uno nuevo, se puede asignar un nombre y tipo de
+ámbito, y dibujar sobre un mapa un multipolígono para la geometría. También
+es posible cargar un archivo vectorial en formato GeoJSON. Este archivo
+vectorial debe tener un único *feature* con un multipolígono o polígono de
+geometría.
+
 ![](img/backend-admin6.png)
 
 ### Estaciones meteorológicas
 
+En la sección de Estaciones Meteorológicas (*Stations*) se pueden listar,
+modificar, eliminar o agregar nuevas estaciones meteorológicas.
+
 ![](img/backend-stations1.png)
+
+Al editar o crear una estación, se puede asignar el código, nombre, lugar y
+coordenadas de la estación. El código (*code*) de la estación debe coincidir
+con el código asignado a los sensores al momento de la carga de mediciones.
+
+También se incluye un campo de metadatos en formato JSON, en caso de que sea
+necesario guardar información externa a la plataforma.
+
 ![](img/backend-stations2.png)
 
 ### Auditoría
+
+La plataforma tiene integrado un sistema de auditoría para todas las acciones
+realizadas por usuarios y por los procesos automáticos. Podrá consultarla
+yendo a la Entradas de registro (en *Audit Log*).
 
 ![](img/backend-auditlog1.png)
