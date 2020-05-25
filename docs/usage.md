@@ -1,50 +1,89 @@
 # Uso
 
-## Aselli instabilis Alpes
+En esta sección se describen las diferentes vistas que conforman el frontend
+de la plataforma, y de qué manera se pueden utilizar las herramientas
+provistas para visualizar y analizar los resultados de los procesos
+automáticos aplicados sobre imágenes satelitales y de las estaciones
+meteorológicas.
 
-Lorem markdownum spectatorem interdictae cessere quaedam. Hanc sine que
-laesasque fecundo: est sonus? Sine enim.
+Este texto está dirigido tanto para usuarios anónimos, como para usuarios
+registrados y aquellos con el rol de administrador.
 
-Pars fuit abstulit semina de [grandia Erectheus](http://toto.com/) ille sit
-defrenato sanguine Iuppiter coquiturque satis neque tumulo cervos exsanguemque.
-Videt ne veri decoris, hirsuti solverat cumque, cornibus intendens utque? Hanc
-ipse, qui Caeneus qui deum poscit, orbe, pascere primo sit qui optavit.
+## Inicio
 
-1. Facioque erat iussit ad omnem extremum mensis
-2. Unde Crantoris
-3. Vosne belua
-4. Iamque dracones concussit quam regnaque credar aetatem
-5. Nomine quem baca vetuit
+En la página de inicio se listan diferentes componentes que forman parte de
+la plataforma. Desde aquí se puede acceder a los mapas del módulo de
+Observación Terrestre, como el mapa de Cobertura Verde o el mapa de Cobertura
+de Loma Perdida, y por otro lado, al Mapa y el Dashboard del módulo de
+Estaciones Meteorológicas.
 
-Mansit parte, a invitaque pio redeuntibus passa celebres eadem. Quem caelo
-terras certamen natant; *pactus* umbra spina usum profectu nondum accipiunt
-arbor!
+![Captura de inicio](img/home.png)
 
-## Comitantibus quae
+## Observación terrestre
 
-Cervicis effugiam ramis murus et quam est praemia effundit seminaque, ut
-tenebat, quo ora pectore loquaci, nam. Caput concita, dicenti cervi undis,
-prohibemur inmemor omnia saevus culpa. Fiat quo habenti damno, si sua medio
-factis; non [ferantur](http://necin.net/), destringere ibat!
+### Cobertura Verde
 
-    backlink_wizard_search = bluetoothClipboardSystem / 2;
-    if (deprecated) {
-        type(dvd_recycle, megabyte(707213, compressionSimm));
-        gnu(clipboardInstall, qbe);
-        power_daemon_right(batch, balance_static, softTrojanMenu);
-    }
-    var cloudRetinaFtp = peopleware_flash + refresh * ip_macintosh;
+![](img/vi1.png)
+![](img/vi2.png)
+![](img/vi3.png)
+![](img/vi4.png)
+![](img/vi5.png)
+![](img/vi6.png)
+![](img/vi7.png)
 
-Sunt Iovem transferre petuntur esset adparuit Melas, docebo hoc moderante neque
-inspirantque mandata etiamnum fastigiaque longo felices. Pes fallit, nomen
-ungues utque adducor quamvis laquei turis. Sollicitae erat antiquas poteris.
+### Cobertura de Loma Perdida
 
-- Sum illinc
-- Saepe fieri
-- Fuit luna vince caede rebus Phoebo sui
-- Albente recentes cruciatibus trabes deficiunt gradumque spumeus
-- Exierat cum plura ima partu umbrosum errent
+![](img/lomas1.png)
 
-Ut Aiacem *mensae*; ait est comitesque ferat flexuque est quem effluxere probat
-moenia: quae non suadet adorat. Suique sis classis carinae loquendi futura. Et
-visa est sic superum pectus concipiunt pater animalia proxima.
+### Detección de Cambios
+
+![](img/objects1.png)
+
+## Estaciones Meteorológicas
+
+### Mapa
+
+![](img/stations-map1.png)
+![](img/stations-map2.png)
+![](img/stations-map3.png)
+
+### Dashboard
+
+![](img/stations-dashboard1.png)
+![](img/stations-dashboard2.png)
+![](img/stations-dashboard3.png)
+![](img/stations-dashboard4.png)
+![](img/stations-data1.png)
+
+## Usuarios
+
+### Reglas
+### Alertas
+### Imágenes
+### Perfil
+
+## Administradores
+
+### Panel de administración
+
+![](img/backend-admin1.png)
+
+### Usuarios
+
+![](img/backend-admin2.png)
+![](img/backend-admin3.png)
+![](img/backend-admin4.png)
+
+### Ámbitos
+
+![](img/backend-admin5.png)
+![](img/backend-admin6.png)
+
+### Estaciones meteorológicas
+
+![](img/backend-stations1.png)
+![](img/backend-stations2.png)
+
+### Auditoría
+
+![](img/backend-auditlog1.png)
