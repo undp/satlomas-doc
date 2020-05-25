@@ -253,24 +253,131 @@ botón *Iniciar sesión* ahora hay dos íconos:
 
 ### Reglas
 
+El sistema de alertas y notificación de incidentes se basa en un conjunto de
+reglas definidas por el usuario. El usuario debe definir reglas para poder
+monitorear cambios de interés. De esta manera, el sistema no toma decisiones
+por su cuenta, si no que solamente informa cuando se captura una medición
+*anormal* según el criterio del usuario y permite facilmente hacer una
+evaluación posterior acerca de los cambios registrados.
+
+Dado las naturalezas de los datos que se procesan y cargan en la plataforma,
+tnato dle módulo de observación terrestre (productos del procesamiento de
+imágenes satelitales) y del módulo de estaciones meteorológicas (mediciones
+de sensores terrestres), el sistema define 3 tipos de reglas:
+
+1. Reglas de parámetro
+2. Reglas de tipo de ámbito
+3. Reglas de ámbito
+
+A continuación se describen cada uno de ellos, y se detalla como el usuario
+puede listar, definir, modificar o eliminar reglas.
+
 #### Reglas de Parámetro
 
+Las Reglas de Parámetro aplican a cambios relacionados a un parámetro
+de una estación meteorológica.
+
 ![](img/admin-parameter-rule1.png)
+
+Una regla de parámetro se define con los siguientes atributos:
+
+* **Estación**: La estación sobre la cual aplica la regla. Este campo puede ser
+  vacío, en cuyo caso se aplicará a cualquier estación.
+* **Parámetro**: El parámetro sobre el cual aplica la regla.
+* **Valor mínimo y máximo**: Define el rango de valores máximos permitidos para el
+  parámetro de la estación. Si se observa una medición por fuera de esta rango,
+  se creará una alerta.
+* **¿Es absoluto?**: Determina si el rango válido de valores es en términos
+  absolutos o relativos con respecto a la medición anterior (del mismo
+  parámetro y estación).
+
 ![](img/admin-parameter-rule2.png)
-
-#### Reglas de Tipo de Ámbito
-
-![](img/admin-scope-type-rule1.png)
-![](img/admin-scope-type-rule2.png)
 
 #### Reglas de Ámbito
 
+Las Reglas de Ámbito aplican a cambios de cobertura en un ámbito en
+particular.
+
 ![](img/admin-scope-rule1.png)
+
+Una regla de ámbito se define con los siguientes atributos:
+
+* **Ámbito**: El ámbito sobre el cual aplica la regla. Este campo puede ser
+  vacío, en cuyo caso se aplicará a cualquier ámbito.
+* **Tipo de Cobertura**: El tipo de cobertura en el que aplica la regla. Por el
+  momento hay dos opciones: *Vegetación en Lomas* (cmabios de Cobertura Verde)
+  y *Pérdida de Loma* (cambios de Cobertura de Loma Perdida). También es
+  posible seleccionar *[Cualquiera]* para que aplique sobre cualquiera de los
+  dos tipos.
+* **Tipo de Cambio**: Determina si el rango de valores es en términos de Área o
+  Porcentaje de área. Utilizar Porcentaje permite definir una regla en términos
+  de area relativos a la superficie de los ámbitos.
+* **Valor mínimo y máximo**: Define el rango de valores permitidos. Si el tipo
+  de cambio es Area, los valores representan hectáreas. Si el tipo de cambio es
+  Porcentaje, los valores son porcentajes (entre 0 y 100).
+
 ![](img/admin-scope-rule2.png)
+
+#### Reglas de Tipo de Ámbito
+
+Las Reglas de Tipo de Ámbito aplican a cambios de cobertura en todos los
+ámbitos de un tipo de ámbitos.
+
+![](img/admin-scope-type-rule1.png)
+
+Una regla de tipo de ámbito se define con los siguientes atributos:
+
+* **Tipo de Ámbito**: El tipo de ámbito sobre el cual aplica la regla. Este
+  campo puede ser vacío, en cuyo caso se aplicará a cualquier tipo de ámbito.
+* **Tipo de Cobertura**: El tipo de cobertura en el que aplica la regla. Por el
+  momento hay dos opciones: *Vegetación en Lomas* (cmabios de Cobertura Verde)
+  y *Pérdida de Loma* (cambios de Cobertura de Loma Perdida). También es
+  posible seleccionar *[Cualquiera]* para que aplique sobre cualquiera de los
+  dos tipos.
+* **Tipo de Cambio**: Determina si el rango de valores es en términos de Área o
+  Porcentaje de área. Utilizar Porcentaje permite definir una regla en términos
+  de area relativos a la superficie de los ámbitos.
+* **Valor mínimo y máximo**: Define el rango de valores permitidos. Si el tipo
+  de cambio es Area, los valores representan hectáreas. Si el tipo de cambio es
+  Porcentaje, los valores son porcentajes (entre 0 y 100).
+
+![](img/admin-scope-type-rule2.png)
 
 ### Alertas
 
+Cada vez que se carguen mediciones nuevas en la base de datos, se ejecuta el
+motor de reglas, para determinar si se deben generar nuevas alertas.
+
+En este momento, las condiciones para que se dispare el motor de reglas son
+las siguientes:
+
+1. Se procesó y cargó un nuevo producto del modelo de Cobertura Verde.
+   *Frecuencia*: Una vez por mes
+2. Se procesó y cargó un nuevo producto del modelo de Cobertura de Loma Perdida
+   *Frecuencia*: Una vez por mes
+3. Se procesó y cargó un nuevo producto del modelo de Detección de Objetos
+   *Frecuencia*: Depende de la frecuencia de los pedidos de escenas de
+   PeruSat-1 a CONIDA.
+4. Se cargó una nueva medición de una estación meteorológica
+   *Frecuencia*: Cada 15 minutos
+
+El motor de reglas recorre, para todos los usuarios, cada una de las reglas
+definidas, y verifica si la nueva medición rompe esa regla. Si esto sucede,
+se crea una alerta y se notifica.
+
+Las alertas generadas se listan en la sección Alertas del Panel de Usuario,
+donde se detalla la fecha en la que ocurrió la notificación, la regla
+afectada y una descripción de la causa de la alerta.
+
+![](img/admin-alerts1.png)
+
+A continuación se describen diagramas de flujo acerca del funcionamiento del
+motor de reglas.
+
 #### Diagrama de verificación de regla
+
+Este es un diagrama del algoritmo de verificación de una regla en particular.
+El motor realiza este procedimiento para cada regla y usuario.
 
 ```mermaid
 graph TB;
@@ -291,6 +398,9 @@ graph TB;
 
 #### Diagrama para reglas de parámetro
 
+Diagrama que describe como se filtran las mediciones para una regla de
+parámetro.
+
 ```mermaid
 graph LR;
     inicio([Inicio])-->todas{{en todas las estaciones?}};
@@ -300,6 +410,9 @@ graph LR;
 ```
 
 #### Diagrama para reglas de tipo de ámbito
+
+Diagrama que describe como se filtran las mediciones para una regla de
+tipo de ámbito.
 
 ```mermaid
 graph LR;
@@ -311,22 +424,40 @@ graph LR;
 
 #### Diagrama para reglas de ámbito
 
+Diagrama que describe como se filtran las mediciones para una regla de
+ámbito.
+
 ```mermaid
 graph LR;
-    inicio([Inicio])-->todos{{en todos los ámbitos del tipo?}};
+    inicio([Inicio])-->todos{{en todos los ámbitos?}};
     todos-- sí -->fin([Fin]);
     todos-- no -->filtrar[Filtra por ámbito <br />definido en regla];
     filtrar-->fin;
 ```
 
-![](img/admin-alerts1.png)
-
 ### Imágenes
 
+En la sección Imágenes del Panel de Usuario se listan las imágenes ráster,
+producto de los procesos automáticos del módulo de observación terrestre
+(cobertura verde, loma perdida, etc). En la tabla figura el período
+correspondiente al producto y el nombre de la imagen.
+
 ![](img/admin-images1.png)
+
+Desde esta lista se pueden descargar en formato GeoTIFF hacinedo clic en el
+ícono de Descarga. También se puede obtener una URL del servidor XYZ de
+*tiles*, para poder incorporar esa imagen como capa en otras aplicaciones
+GIS, como QGIS o Leaflet.
+
 ![](img/admin-images2.png)
 
 ### Perfil
+
+En la sección Perfil, el usuario puede:
+
+- Modificar su dirección de e-mail
+- Activar o desactivar el envío de notificaciones de alerta por e-mail
+- Reestablecer la contraseña
 
 ![](img/admin-profile1.png)
 
