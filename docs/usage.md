@@ -58,9 +58,34 @@ Estaciones Meteorológicas.
 ## Usuarios
 
 ### Reglas
+
+#### Reglas de Parámetro
+
+![](img/admin-parameter-rule1.png)
+![](img/admin-parameter-rule2.png)
+
+#### Reglas de Tipo de Ámbito
+
+![](img/admin-scope-type-rule1.png)
+![](img/admin-scope-type-rule2.png)
+
+#### Reglas de Ámbito
+
+![](img/admin-scope-rule1.png)
+![](img/admin-scope-rule2.png)
+
 ### Alertas
+
+![](img/admin-alerts1.png)
+
 ### Imágenes
+
+![](img/admin-images1.png)
+![](img/admin-images2.png)
+
 ### Perfil
+
+![](img/admin-profile1.png)
 
 ## Administradores
 
