@@ -532,9 +532,7 @@ Encrypt][1].
 
     Las siguientes instrucciones están basadas en la guía de Certbot para la
     distribución de Ubuntu 18.04 y Nginx.  Si desea ver más información puede
-    acceder [aquí][1].
-
-  [1]: https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx
+    acceder [aquí][2].
 
 Deberá agregar el PPA de Certbot a la lista de repositorios.  Para esto,
 ejecute los siguientes comandos:
@@ -565,3 +563,4 @@ El certificado se debería actualizar automaticamente a través del servicio de
 Certbot.
 
   [1]: https://letsencrypt.org/
+  [2]: https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx
