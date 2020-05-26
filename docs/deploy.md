@@ -12,12 +12,6 @@ En los repositorios se incluyen ejemplos de archivos de configuración cuando
 es apropiado, pero siempre se deben tomar como ejemplos y ajustar según sea
 necesario a su criterio.
 
-!!! tip "Instalación en portátil"
-
-    Si Ud. desea levantar una versión local de la plataforma en una
-    computadora hogareña o portátil, se recomienda en cambio leer las
-    instrucciones detalladas en la sección [Desarrollo](development.md).
-
 !!! note "Requerimientos de SO"
 
     Se asume que la plataforma va a ejecutarse en un entorno con la
