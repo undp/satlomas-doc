@@ -520,5 +520,48 @@ sudo systemctl restart nginx
 
 Con esto concluye la implementación de la plataforma. Podrá acceder al
 backend desde `http://api.satlomas.com/`, y al frontend desde
-`https://app.satlomas.com/` (suponiendo que configuró los sitios con esos
+`http://app.satlomas.com/` (suponiendo que configuró los sitios con esos
 subdominios).
+
+#### Configuración SSL
+
+Es posible configurar SSL a través de los certificados gratuitos de [Let's
+Encrypt][1].
+
+!!! tip "Instrucciones para Ubuntu 18.04"
+
+    Las siguientes instrucciones están basadas en la guía de Certbot para la
+    distribución de Ubuntu 18.04 y Nginx.  Si desea ver más información puede
+    acceder [aquí][1].
+
+  [1]: https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx
+
+Deberá agregar el PPA de Certbot a la lista de repositorios.  Para esto,
+ejecute los siguientes comandos:
+
+```bash
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository universe
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+```
+
+Ejecute este comando para instalar Certbot:
+
+```bash
+sudo apt-get install certbot python3-certbot-nginx
+```
+
+Ahora ejecute este comando para obtener un certificado y hacer que Certbot
+edite los archivos de configuración de Nginx de los sitios habilitados
+automáticamente.
+
+```bash
+sudo certbot --nginx
+```
+
+El certificado se debería actualizar automaticamente a través del servicio de
+Certbot.
+
+  [1]: https://letsencrypt.org/
