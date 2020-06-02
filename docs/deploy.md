@@ -183,25 +183,25 @@ psql satlomas -c "CREATE EXTENSION IF NOT EXISTS postgis CASCADE"
 
 Para que la plataforma pueda descargar los productos del satélite Sentinel-1
 y Sentinel-2 de la ESA, es necesario estar registrado en [Copernicus Open
-Access Hub][1].
+Access Hub][2].
 
-Para registrase, ingrese [aquí][2]. Tome nota del **nombre de usuario** y
+Para registrase, ingrese [aquí][3]. Tome nota del **nombre de usuario** y
 **contraseña** dado que será necesario al momento de configurar el backend.
 
-  [1]: https://scihub.copernicus.eu/
-  [2]: https://scihub.copernicus.eu/dhus/#/self-registration
+  [2]: https://scihub.copernicus.eu/
+  [3]: https://scihub.copernicus.eu/dhus/#/self-registration
 
 
 #### Registración en NASA EarthData
 
 Para descargar los productos de MODIS VI, es necesario estar registrado en
-[NASA EarthData][2].
+[NASA EarthData][4].
 
-Puede registrarse ingresando [aquí][2]. Tome nota del **nombre de usuario** y
+Puede registrarse ingresando [aquí][5]. Tome nota del **nombre de usuario** y
 **contraseña** dado que será necesario al momento de configurar el backend.
 
-  [1]: https://urs.earthdata.nasa.gov/
-  [2]: https://urs.earthdata.nasa.gov/users/new
+  [4]: https://urs.earthdata.nasa.gov/
+  [5]: https://urs.earthdata.nasa.gov/users/new
 
 
 #### Variables de entorno
@@ -219,18 +219,18 @@ configuradas para el funcionamiento de la plataforma.
 
 | Variable      | Descripción |
 | ------------- | --------------------------------------------------- |
-| `SECRET_KEY`  | String único de caracteres alfanuméricos, utilizado para firmas criptográficas. Puede generar uno [aquí][1].
+| `SECRET_KEY`  | String único de caracteres alfanuméricos, utilizado para firmas criptográficas. Puede generar uno [aquí][6].
 | `ALLOWED_HOSTS` | Lista de *hosts* habilitados. Debería ingresar el dominio y/o IP pública del servidor |
 | `DB_USER` | Usuario de la BD (debería ser el nombre del usuario actual) |
 | `DB_PASSWORD` | Contraseña de la BD (la contraseña que definió antes) |
-| `SCIHUB_USER` | Usuario de [SciHub][2] |
-| `SCIHUB_PASS` | Contraseña de [SciHub][2] |
-| `MODIS_USER`  | Usuario de [EarthData][3] |
-| `MODIS_PASS`  | Contraseña de [EarthData][3] |
+| `SCIHUB_USER` | Usuario de [SciHub][7] |
+| `SCIHUB_PASS` | Contraseña de [SciHub][7] |
+| `MODIS_USER`  | Usuario de [EarthData][8] |
+| `MODIS_PASS`  | Contraseña de [EarthData][8] |
 
-  [1]: https://djecrety.ir/
-  [2]: #registracion-en-copernicus-open-access-hub
-  [3]: #registracion-en-nasa-earthdata
+  [6]: https://djecrety.ir/
+  [7]: #registracion-en-copernicus-open-access-hub
+  [8]: #registracion-en-nasa-earthdata
 
 ### Inicialización
 
@@ -289,11 +289,11 @@ npm run build
 !!! tip "Más información"
 
     Esta sección de la documentación está basada en la guía [How To Set Up
-    Django with Postgres, Nginx, and Gunicorn on Ubuntu 18.04][1], de Digital
+    Django with Postgres, Nginx, and Gunicorn on Ubuntu 18.04][9], de Digital
     Ocean. Para más información para depurar los servicios, puede
     consultarla.
 
-  [1]: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
+  [9]: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
 
 
 ### Backend
@@ -526,13 +526,13 @@ subdominios).
 #### Configuración SSL
 
 Es posible configurar SSL a través de los certificados gratuitos de [Let's
-Encrypt][1].
+Encrypt][10].
 
 !!! tip "Instrucciones para Ubuntu 18.04"
 
     Las siguientes instrucciones están basadas en la guía de Certbot para la
     distribución de Ubuntu 18.04 y Nginx.  Si desea ver más información puede
-    acceder [aquí][2].
+    acceder [aquí][11].
 
 Deberá agregar el PPA de Certbot a la lista de repositorios.  Para esto,
 ejecute los siguientes comandos:
@@ -562,5 +562,5 @@ sudo certbot --nginx
 El certificado se debería actualizar automaticamente a través del servicio de
 Certbot.
 
-  [1]: https://letsencrypt.org/
-  [2]: https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx
+  [10]: https://letsencrypt.org/
+  [11]: https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx
