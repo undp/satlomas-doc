@@ -242,7 +242,14 @@ pipenv shell
 ./manage.py migrate   # Correr las migraciones
 ```
 
-Luego, cree un *superusuario* para SatLomas. Este será el primer usuario
+Antes de continuar, debería generar los archivos estáticos, necesarios para el
+panel de administrador:
+
+```bash
+./manage.py collectstatic
+```
+
+Finalmente, cree un *superusuario* para SatLomas. Este será el primer usuario
 administrador, con el que podrá registrar nuevos administradores o usuarios.
 
 ```bash
