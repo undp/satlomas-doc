@@ -456,7 +456,7 @@ server {
 
   location / {
     include proxy_params;
-    proxy_pass http://unix:/home/ubuntu/satlomas-back/satlomas.sock;
+    proxy_pass http://unix:/run/gunicorn.sock;
 
     proxy_connect_timeout       600;
     proxy_send_timeout          600;
