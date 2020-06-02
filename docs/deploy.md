@@ -301,7 +301,7 @@ npm run build
 Comience creando un nuevo archivo para el socket del servicio del backend:
 
 ```bash
-sudo nano /etc/systemd/system/gunicorn.service
+sudo nano /etc/systemd/system/gunicorn.socket
 ```
 
 Copie lo siguiente dentro del archivo:
