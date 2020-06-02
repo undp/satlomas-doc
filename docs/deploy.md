@@ -130,7 +130,7 @@ Para instalar las dependencias correctas del backend, debe instalar el
 manejador de paquetes [Pipenv](https://pipenv.pypa.io/en/latest/).
 
 ```bash
-pip install --user -U pipenv
+sudo -H pip3 install -U pipenv
 ```
 
 Luego, ejecute lo siguiente para instalar todas las dependencias necesarias.
