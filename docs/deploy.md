@@ -360,7 +360,7 @@ ExecStart=/home/ubuntu/.local/share/virtualenvs/satlomas-back-XVGhZdP0/bin/gunic
           --timeout 600 \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
-          satlomas.wsgi:application
+          geolomas.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
