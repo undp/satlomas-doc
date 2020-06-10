@@ -56,7 +56,7 @@ del servidor de PostgreSQL.
 
 ```bash
 # Add TimescaleDBs PPA
-sudo add-apt-repository ppa:timescale/timescaledb-ppa
+sudo add-apt-repository -y ppa:timescale/timescaledb-ppa
 sudo apt-get update
 
 # Now install appropriate package for PG version
@@ -73,7 +73,7 @@ sudo timescaledb-tune
 Ahora, instale la extensión PostGIS 3 para esta versión de PostgreSQL.
 
 ```bash
-sudo apt-get install postgresql-11-postgis-3
+sudo apt-get install -y postgresql-11-postgis-3
 ```
 
 Finalmente, reinicie la instancia de PostgreSQL.
@@ -87,7 +87,7 @@ sudo service postgresql restart
 Instale Python y otras dependencias como GDAL y el servidor de Redis.
 
 ```bash
-sudo apt-get install \
+sudo apt-get install -y \
   build-essential \
   git \
   gdal-bin \
@@ -546,16 +546,16 @@ ejecute los siguientes comandos:
 
 ```bash
 sudo apt-get update
-sudo apt-get install software-properties-common
-sudo add-apt-repository universe
-sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository -y universe
+sudo add-apt-repository -y ppa:certbot/certbot
 sudo apt-get update
 ```
 
 Ejecute este comando para instalar Certbot:
 
 ```bash
-sudo apt-get install certbot python3-certbot-nginx
+sudo apt-get install -y certbot python3-certbot-nginx
 ```
 
 Ahora ejecute este comando para obtener un certificado y hacer que Certbot
