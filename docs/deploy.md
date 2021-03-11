@@ -217,16 +217,16 @@ ejemplo con valores por defecto para algunas variables, pero algunas de ellas
 debe completarlas. A continuación se describen las variables que deben ser
 configuradas para el funcionamiento de la plataforma.
 
-| Variable      | Descripción |
-| ------------- | --------------------------------------------------- |
-| `SECRET_KEY`  | String único de caracteres alfanuméricos, utilizado para firmas criptográficas. Puede generar uno [aquí][6].
-| `ALLOWED_HOSTS` | Lista de *hosts* habilitados. Debería ingresar el dominio y/o IP pública del servidor |
-| `DB_USER` | Usuario de la BD (debería ser el nombre del usuario actual) |
-| `DB_PASSWORD` | Contraseña de la BD (la contraseña que definió antes) |
-| `SCIHUB_USER` | Usuario de [SciHub][7] |
-| `SCIHUB_PASS` | Contraseña de [SciHub][7] |
-| `MODIS_USER`  | Usuario de [EarthData][8] |
-| `MODIS_PASS`  | Contraseña de [EarthData][8] |
+| Variable        | Descripción                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------ |
+| `SECRET_KEY`    | String único de caracteres alfanuméricos, utilizado para firmas criptográficas. Puede generar uno [aquí][6]. |
+| `ALLOWED_HOSTS` | Lista de *hosts* habilitados. Debería ingresar el dominio y/o IP pública del servidor                        |
+| `DB_USER`       | Usuario de la BD (debería ser el nombre del usuario actual)                                                  |
+| `DB_PASSWORD`   | Contraseña de la BD (la contraseña que definió antes)                                                        |
+| `SCIHUB_USER`   | Usuario de [SciHub][7]                                                                                       |
+| `SCIHUB_PASS`   | Contraseña de [SciHub][7]                                                                                    |
+| `MODIS_USER`    | Usuario de [EarthData][8]                                                                                    |
+| `MODIS_PASS`    | Contraseña de [EarthData][8]                                                                                 |
 
   [6]: https://djecrety.ir/
   [7]: #registracion-en-copernicus-open-access-hub
@@ -360,7 +360,7 @@ ExecStart=/home/ubuntu/.local/share/virtualenvs/satlomas-back-XVGhZdP0/bin/gunic
           --timeout 600 \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
-          geolomas.wsgi:application
+          satlomas.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
