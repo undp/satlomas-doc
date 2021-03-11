@@ -1,10 +1,11 @@
 # SatLomas - Documentación
 
 Este repositorio contiene documentación acerca de SatLomas, la plataforma de
-monitoreo satelital del ecosistema de las Lomas.
+monitoreo satelital del ecosistema de las Lomas, desarrollada por [Dymaxion
+Labs](https://dymaxionlabs.com).
 
 La documentación acutalizada se puede acceder desde:
-https://dymaxionlabs.github.io/satlomas-docs/
+https://undp.github.io/satlomas-doc/
 
 
 ## Instalación

@@ -469,7 +469,7 @@ administradores, revocar el acceso a usuarios existentes, administrar los
 
 Puede acceder al panel administrador de SatLomas ingresando aquí:
 
-- [https://api.satlomas.dymaxionlabs.com/admin](https://api.satlomas.dymaxionlabs.com/admin)
+- [https://api.satlomas.pe.undp.org/admin](https://api.satlomas.pe.undp.org/admin)
 
 Para entrar deberá ingresar el mismo nombre de usuario y contraseña con la
 que ingresa al panel de usuario de SatLomas.
