@@ -1,7 +1,7 @@
 site_name: SatLomas
 site_description: Documentación de SatLomas
-site_url: https://dymaxionlabs.github.io/satlomas-docs/
-repo_url: https://github.com/dymaxionlabs/satlomas-docs/
+site_url: https://undp.github.io/satlomas-doc/
+repo_url: https://github.com/undp/satlomas-doc/
 nav:
     - Inicio: index.md
     - Guía de Uso: usage.md
