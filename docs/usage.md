@@ -116,63 +116,70 @@ las Lomas.
 
 ## Estaciones Meteorológicas
 
-La plataforma incluye un módulo de estaciones meteorológicas, donde se
-almacenan, analizan y visualizan mediciones recolectadas por sensores
-terrestres, instalados en diferentes localidades del ecosistema.
+La plataforma incluye un módulo de estaciones hidrometeorológicas ligeras, donde
+se almacenan, analizan y visualizan mediciones recolectadas por sensores de
+clima acoplados a un recolector de neblina estándar, instalados en diferentes
+localidades o *sitios* del ecosistema.  Estos sensores automáticos envían a
+través de un nodo Lorawan la información en tiempo real a la plataforma.
 
 ### Mapa
 
-Desde el frontend se pueden acceder a un mapa de Estaciones, donde todas las
-estaciones cargadas en la base de datos se ubican con marcadores en el mapa.
+Desde el frontend se pueden acceder a un mapa de Sitios, donde se presentan
+todos los sitios en donde se instalaron estaciones y se recolectaron datos en la
+historia, y se ubican con con marcadores en el mapa.
 
 ![](img/stations-map1.png)
 
 Al cargar, el mapa se centra de tal manera de poder mostrar todos los
-marcadores en pantalla. Si desea buscar una estación por nombre o por nombre
+marcadores en pantalla. Si desea buscar un sitio por nombre o por nombre
 del lugar donde está instalado, haga clic en el ícono Buscar ("lupa"), en la
 esquina superior izquierda. Se desplegará al costado izquierdo un buscador
-donde podrá ingresar parte del nombre del lugar o de la estación. Los
-resultados aparecerán automaticamente en la lista debajo del cuadro de
-entrada.
+donde podrá ingresar parte del nombre del sitio. Los resultados aparecerán
+automaticamente en la lista debajo del cuadro de entrada.
 
 ![](img/stations-map2.png)
 
 Si hace clic sobre un marcador en el mapa, se abrirá una ventana indicando el
-nombre y código de la estación, y su lugar. También se mostrará, a modo de
-previsualización, un gráfico de serie de tiempo de un parámetro de los
-sensores de la estación. Puede cambiar de parámetro haciendo clic sobre el
-selector que se encuentra arriba del gráfico.
+nombre y código de la estación configurada, y su lugar. También se mostrará, a
+modo de previsualización, un gráfico de serie de tiempo de un parámetro de los
+sensores de la estación asociada. Puede cambiar de parámetro haciendo clic sobre
+el selector que se encuentra arriba del gráfico.
 
 ![](img/stations-map3.png)
 
-Haciendo clic en el botón Dashboard podrá ingresar al dashboard de esa
-estación seleccionada.
+Haciendo clic en el botón Dashboard podrá ingresar al dashboard de ese sitio
+seleccionado.
 
 ### Dashboard
 
-En esta vista se presentan una serie de gráficos de series de tiempo para
-cada parámetro recolectado por los sensores de una estación en particular.
-Por ejemplo, en los sensores instalados actualmente, se están recolectando
-estos parámetros:
+En esta vista se presentan una serie de gráficos de series de tiempo para cada
+parámetro recolectado por los sensores de la estación asociada a un sitio en
+particular. Por ejemplo, en los sensores instalados actualmente, se están
+recolectando estos parámetros:
 
+- Altitud (msnm)
 - Temperatura de Ambiente (°C)
+- Presión Atmosférica (mbar)
+- Temperatura Interna (°C)
+- Material Particulado (PM1.0)
+- Material Particulado (PM2.5)
+- Material Particulado (PM4.0)
+- Material Particulado (PM10.0)
 - Humedad Relativa (%)
+- Conteo de Tipping Bucket
 - Velocidad del Viento (m/s)
 - Dirección del Viento (grados)
-- Presión Atmosférica (mbar)
-- Precipitaciones (niebla)
-- Material Particulado (PM2.5)
 
 ![](img/stations-dashboard1.png)
 
 En la esquina superior derecha se encuentran dos controles de filtrado, que
-determinan qué datos se graficarán en el dashboard: *estacion* y *tiempo*.
+determinan qué datos se graficarán en el dashboard: *sitio* y *tiempo*.
 
-#### Estación
+#### Sitio
 
-Este control filtra las mediciones para una estación en particular.
+Este control filtra las mediciones para un sitio en particular.
 
-Haciendo clic, se abrirá una ventana con un selector de estaciones. Al
+Haciendo clic, se abrirá una ventana con un selector de sitios. Al
 seleccionarla, se actualizaran automaticamente todos los gráficos.
 
 ![](img/stations-dashboard2.png)
@@ -198,7 +205,7 @@ Ambos modos de operación tienen dos controles en común que determinan su
 funcionamiento:
 
 * **Intervalo de agrupación**: Define el interval en el que se agruparán los
-  datos. Por ejemplo: hora, día, semana, mes, año.
+  datos. Por ejemplo: minuto, hora, día, semana, mes, año.
 * **Función de agregación de tiempo**: Define la función que se aplicará a cada
   grupo de mediciones por intervalo. Por ejemplo: promedio, máximo, mínimo,
   etc.
@@ -206,19 +213,19 @@ funcionamiento:
 ### Tabla
 
 Esta vista es muy similar al dashboard, dado que se presentan los datos de
-mediciones de una estación en particular, pero en formato de tabla. A
-diferencia del dashboard, la tabla tiene como columna cada uno de los
-parámetros, y como fila cada medición
+mediciones de un sitio en particular, pero en formato de tabla. A diferencia del
+dashboard, la tabla tiene como columna cada uno de los parámetros, y como fila
+cada medición
 
 ![](img/stations-data1.png)
 
-Posee los mismos controles de filtrado que el dashboard (control de Estación
-y de Tiempo), y en todo momento se puede dirigir de la vista de tabla al
-dashboard y vice versa, mantiendo la configuración de filtro, haciendo clic
-en *Dashboard*, en la esquina superior izquierda.
+Posee los mismos controles de filtrado que el dashboard (control de Sitio y de
+Tiempo), y en todo momento se puede dirigir de la vista de tabla al dashboard y
+vice versa, mantiendo la configuración de filtro, haciendo clic en *Dashboard*,
+en la esquina superior izquierda.
 
 Por otro lado, haciendo clic en *Descargar*, se podrá descargar la tabla en
-formato CSV (valores separados por coma), document que puede ser abierto en
+formato CSV (valores separados por coma), documento que puede ser abierto en
 otras aplicaciones como planillas de cálculo.
 
 ## Usuarios
