@@ -534,10 +534,10 @@ nuevos sitios (Site).
 
 ![](img/admin-stations-1.png)
 
-Al momento de crear un nuevo sitio, es necesario asegurarse que la estación esté
-creada primero. Cada estación tiene un código unívoco que las identifica. La
-plataforma solamente cargará los datos que recibe si reconoce el código, dado
-que los datos se asocian exactamente a una estación.
+Al momento de crear un nuevo sitio, es necesario asegurarse que la estación
+esté creada primero. Cada estación tiene un código unívoco que las identifica.
+La plataforma solamente cargará los datos que recibe si reconoce el código,
+dado que los datos se asocian exactamente a una estación.
 
 El código (*code*) de la estación debe coincidir con el código asignado a los
 sensores al momento de la carga de mediciones.
@@ -555,7 +555,7 @@ sitio.
 
 ![](img/admin-stations-2.png)
 
-#### Traslado de estaciónes
+#### Traslado de estaciones
 
 Dado que la estaciones pueden ser trasladadas de un sitio a otro, la plataforma
 ofrece un mecanismo que permite realizar el traslado, sin pérdida de
@@ -566,8 +566,8 @@ modo de ejemplo se procedería de la siguiente manera:
 
 1. Se desconecta y desacopla la estación ubicada en el sitio A
 2. En el administrador, se edita el sitio "A" y se desasocia la estación. Este
-   paso se realiza para que, al moento de encender la estación ya ubicado en el
-   sitio B, no se carguen erroneamente datos asociados al sitio A.
+   paso se realiza para que, al momento de encender la estación ya ubicado en
+   el sitio B, no se carguen erroneamente datos asociados al sitio A.
 3. Se traslada la estación al sitio B.
 4. En el administrador, se crea el sitio B (si no existía), y se asocia la
    estación al sitio B.
@@ -575,7 +575,9 @@ modo de ejemplo se procedería de la siguiente manera:
 
 Es importante asegurarse que la estación esté desasociada del sitio original
 antes del traslado, y por otro lado, que la estación ya esté asociada al sitio
-nuevo antes de volver a conectarse.
+nuevo antes de volver a conectarse.  De esta manera, se podrá asegurar que los
+datos estén cargados correctamente y no haya pérdida de información durante el
+proceso.
 
 En caso de interrupciones de conectividad o de energía en las estaciones, la
 plataforma no se verá afectada y volverá a recolectar datos automáticamente.
