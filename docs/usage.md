@@ -529,18 +529,56 @@ geometría.
 ### Estaciones meteorológicas
 
 En la sección de Estaciones Meteorológicas (*Stations*) se pueden listar,
-modificar, eliminar o agregar nuevas estaciones meteorológicas.
+modificar, eliminar o agregar nuevas estaciones meteorológicas (Station) y
+nuevos sitios (Site).
 
-![](img/backend-stations1.png)
+![](img/admin-stations-1.png)
 
-Al editar o crear una estación, se puede asignar el código, nombre, lugar y
-coordenadas de la estación. El código (*code*) de la estación debe coincidir
-con el código asignado a los sensores al momento de la carga de mediciones.
+Al momento de crear un nuevo sitio, es necesario asegurarse que la estación esté
+creada primero. Cada estación tiene un código unívoco que las identifica. La
+plataforma solamente cargará los datos que recibe si reconoce el código, dado
+que los datos se asocian exactamente a una estación.
+
+El código (*code*) de la estación debe coincidir con el código asignado a los
+sensores al momento de la carga de mediciones.
 
 También se incluye un campo de metadatos en formato JSON, en caso de que sea
 necesario guardar información externa a la plataforma.
 
-![](img/backend-stations2.png)
+![](img/admin-stations-3.png)
+
+Al editar o crear un Sitio, se le debe asignar un nombre, las coordenadas
+geográficas (en proyección WGS84), y opcionalmente asociarlo a una estación
+cargada. Esta asociación puede hacerle luego en una edición posterior. También
+existe la posibilidad de agregarle atributos opcionales relacionados con el
+sitio.
+
+![](img/admin-stations-2.png)
+
+#### Traslado de estaciónes
+
+Dado que la estaciones pueden ser trasladadas de un sitio a otro, la plataforma
+ofrece un mecanismo que permite realizar el traslado, sin pérdida de
+continuidad y consistencia de los datos a lo largo del tiempo.
+
+Suponiendo que se quiere trasladar una estación del sitio "A" al sitio "B", a
+modo de ejemplo se procedería de la siguiente manera:
+
+1. Se desconecta y desacopla la estación ubicada en el sitio A
+2. En el administrador, se edita el sitio "A" y se desasocia la estación. Este
+   paso se realiza para que, al moento de encender la estación ya ubicado en el
+   sitio B, no se carguen erroneamente datos asociados al sitio A.
+3. Se traslada la estación al sitio B.
+4. En el administrador, se crea el sitio B (si no existía), y se asocia la
+   estación al sitio B.
+5. Se enciende la estación, ya conectada a la red LoraWan.
+
+Es importante asegurarse que la estación esté desasociada del sitio original
+antes del traslado, y por otro lado, que la estación ya esté asociada al sitio
+nuevo antes de volver a conectarse.
+
+En caso de interrupciones de conectividad o de energía en las estaciones, la
+plataforma no se verá afectada y volverá a recolectar datos automáticamente.
 
 ### Auditoría
 
