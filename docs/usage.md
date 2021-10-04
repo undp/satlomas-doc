@@ -23,8 +23,8 @@ Estaciones Meteorológicas.
 
 ### Cobertura Verde
 
-El mapa de cobertura verde presenta la capa de cobertura de vegetación del
-ecosistema de las Lomas, basada en el producto de MODIS de índices de
+El aplicativo de mapa de cobertura verde presenta la capa de cobertura de vegetación del
+ecosistema de lomas, basada en el producto de MODIS de índices de
 vegetación (MOD13Q1).
 
 ![](img/Satlomas_coberturaverde.png)
