@@ -2,7 +2,11 @@
 
 Este repositorio contiene documentación acerca de SatLomas, la plataforma de
 monitoreo satelital del ecosistema de las Lomas, desarrollada por [Dymaxion
-Labs](https://dymaxionlabs.com).
+Labs](https://dymaxionlabs.com) para el proyecto Conservación, gestión y
+rehabilitación de los ecosistemas de lomas en Lima (EbA Lomas), que es
+ejecutado por el Programa de las Naciones Unidas para el Desarrollo (Pnud),
+bajo la dirección del Servicio Nacional de Áreas Naturales Protegidas por
+el Estado (Sernanp) y el financiamiento del Fondo Mundial del Ambiente (GEF).
 
 La documentación acutalizada se puede acceder desde:
 https://undp.github.io/satlomas-doc/
