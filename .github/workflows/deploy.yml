@@ -29,4 +29,4 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          EXTRA_PACKAGES: build-base py3-pip py3-pillow py3-cffi py3-brotli gcc musl-dev python3-dev pango
+          EXTRA_PACKAGES: build-base jpeg-dev zlib-dev libjpeg py3-pip py3-pillow py3-cffi py3-brotli gcc musl-dev python3-dev pango
