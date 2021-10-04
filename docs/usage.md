@@ -27,7 +27,7 @@ El mapa de cobertura verde presenta la capa de cobertura de vegetación del
 ecosistema de las Lomas, basada en el producto de MODIS de índices de
 vegetación (MOD13Q1).
 
-![](img/Satlomas_homepage.png)
+![](img/Satlomas_coberturaverde.png)
 
 En la esquina superior izquierda se encuentra el control de Filtro, que
 permite filtrar los resultados de la serie de tiempo para un ámbito y un
