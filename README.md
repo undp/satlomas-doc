@@ -11,7 +11,6 @@ el Estado (Sernanp) y el financiamiento del Fondo Mundial del Ambiente (GEF).
 La documentación acutalizada se puede acceder desde:
 https://undp.github.io/satlomas-doc/
 
-
 ## Instalación
 
 Para poder regenerar y visualizar la documentación localmente, se necesita
