@@ -33,7 +33,7 @@ En la esquina superior izquierda se encuentra el control de Filtro, que
 permite filtrar los resultados de la serie de tiempo para un ámbito y un
 rango de fechas específico:
 
-![](img/vi2.png)
+![](img/seleccion-de-ambitos.mp4)
 
 Desde el selector de Tipo de Ámbito se puede seleccionar un tipo de ámbito.
 Al seleccionar uno, en el mapa se actualizará la capa de ámbitos del tipo
