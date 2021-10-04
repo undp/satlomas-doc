@@ -27,11 +27,10 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install nltk==3.4.5
-          pip install mkdocs
-          pip install mkdocs-material
+          pip install -U mkdocs
+          pip install -U mkdocs-material
 
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@1.23
+      - name: Build and deploy docs
+        run: mkdocs gh-deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
