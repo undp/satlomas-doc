@@ -17,7 +17,7 @@ Observación Terrestre, como el mapa de **Cobertura Verde** o el mapa de **Cober
 de Loma Perdida**, y por otro lado, al Mapa y el **Dashboard** del módulo de
 Estaciones Meteorológicas.
 
-![Captura de inicio](img/home.png)
+![Captura de inicio](img/Satlomas_homepage.png)
 
 ## Observación terrestre
 
