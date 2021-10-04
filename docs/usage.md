@@ -63,7 +63,7 @@ Debajo del ícono de Capas, se encuentra el control de Selección de Períodos,
 que permite seleccionar una fecha en particular, para visualizar las capas de
 ese período en el mapa.
 
-![](img/vi7.png)
+![](img/Satlomas_selectordeescena.png)
 
 !!! tip "Filtro vs. selector de fechas"
 
