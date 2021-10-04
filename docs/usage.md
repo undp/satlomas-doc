@@ -100,7 +100,7 @@ Este producto consiste en una capa vectorial, donde se localizan objetos de
 interés, relacionados a actividad no monitoreada e invasión de tierras sobre
 las Lomas.
 
-![](img/objects1.png)
+![](img/Satlomas_lomaperdida.png)
 
 !!! info "Objetos de interés"
 
