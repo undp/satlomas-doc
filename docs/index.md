@@ -2,7 +2,8 @@
 
 Esta es la documentación oficial de SatLomas, la plataforma de monitoreo
 satelital del ecosistema de las Lomas, desarrollada por [Dymaxion
-Labs](https://dymaxionlabs.com).
+Labs](https://dymaxionlabs.com) para el Proyecto EbA Lomas, que es
+ejecutado por PNUD bajo la dirección del SERNANP.
 
 La última versión se encuentra disponible [aquí][2].
 
