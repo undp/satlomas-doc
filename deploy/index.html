@@ -1,0 +1,1162 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de SatLomas">
+      
+      
+      
+      
+        <link rel="canonical" href="https://undp.github.io/satlomas-doc/deploy/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+    
+    
+      
+        <title>Implementación - SatLomas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implementacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="SatLomas" class="md-header__button md-logo" aria-label="SatLomas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SatLomas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implementación
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/undp/satlomas-doc/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SatLomas" class="md-nav__button md-logo" aria-label="SatLomas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SatLomas
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/undp/satlomas-doc/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        Guía de Uso
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodology/" class="md-nav__link">
+        Metodología
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Implementación
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Implementación
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    Dependencias
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-y-extensiones-timescaledb-y-postgis" class="md-nav__link">
+    PostgreSQL y extensiones (TimescaleDB y PostGIS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-redis-gdal" class="md-nav__link">
+    Python, Redis, GDAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    Backend
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    Configuración
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    Base de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registracion-en-copernicus-open-access-hub" class="md-nav__link">
+    Registración en Copernicus Open Access Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registracion-en-nasa-earthdata" class="md-nav__link">
+    Registración en NASA EarthData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-de-entorno" class="md-nav__link">
+    Variables de entorno
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion" class="md-nav__link">
+    Inicialización
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion_1" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-servicios" class="md-nav__link">
+    Configuración de servicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración de servicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend_1" class="md-nav__link">
+    Backend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend_1" class="md-nav__link">
+    Frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx_1" class="md-nav__link">
+    Nginx
+  </a>
+  
+    <nav class="md-nav" aria-label="Nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-ssl" class="md-nav__link">
+    Configuración SSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    Dependencias
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-y-extensiones-timescaledb-y-postgis" class="md-nav__link">
+    PostgreSQL y extensiones (TimescaleDB y PostGIS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-redis-gdal" class="md-nav__link">
+    Python, Redis, GDAL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    Backend
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    Configuración
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    Base de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registracion-en-copernicus-open-access-hub" class="md-nav__link">
+    Registración en Copernicus Open Access Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registracion-en-nasa-earthdata" class="md-nav__link">
+    Registración en NASA EarthData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-de-entorno" class="md-nav__link">
+    Variables de entorno
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion" class="md-nav__link">
+    Inicialización
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion_1" class="md-nav__link">
+    Instalación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-servicios" class="md-nav__link">
+    Configuración de servicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración de servicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend_1" class="md-nav__link">
+    Backend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend_1" class="md-nav__link">
+    Frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx_1" class="md-nav__link">
+    Nginx
+  </a>
+  
+    <nav class="md-nav" aria-label="Nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-ssl" class="md-nav__link">
+    Configuración SSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="deploy.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+              
+                
+                  <a href="https://github.com/undp/satlomas-doc/edit/master/docs/deploy.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="implementacion">Implementación<a class="headerlink" href="#implementacion" title="Permanent link">&para;</a></h1>
+<p>En esta sección se detallan instrucciones para poder implementar la
+plataforma en producción.</p>
+<p>Este documento apunta a <em>operadores y administradores de sistemas</em> que
+necesiten poner en funcionamiento la plataforma en un servidor, y por lo
+tanto se asumen conocimientos básciso de manejo de terminal, instalación de
+paquetes y configuración de servicios.</p>
+<p>En los repositorios se incluyen ejemplos de archivos de configuración cuando
+es apropiado, pero siempre se deben tomar como ejemplos y ajustar según sea
+necesario a su criterio.</p>
+<div class="admonition note">
+<p class="admonition-title">Requerimientos de SO</p>
+<p>Se asume que la plataforma va a ejecutarse en un entorno con la
+distribución <strong>Ubuntu 18.04</strong> instalada. Para otros sistemas operativos,
+será necesario consultar la documentación correspondiente de las
+dependencias.</p>
+</div>
+<h2 id="dependencias">Dependencias<a class="headerlink" href="#dependencias" title="Permanent link">&para;</a></h2>
+<p>La plataforma consiste en un backend, implementado sobre Python, y un
+frontend implementado en Nodejs. Utiliza PostgreSQL como base de datos, y
+Redis como cache y base de datos para la cola de trabajos.</p>
+<p>A continuación se detallan instrucciones para instalar y configurar estas
+dependencias.</p>
+<h3 id="postgresql-y-extensiones-timescaledb-y-postgis">PostgreSQL y extensiones (TimescaleDB y PostGIS)<a class="headerlink" href="#postgresql-y-extensiones-timescaledb-y-postgis" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Sólo para Ubuntu 18.04</p>
+<p>Las instrucciones están pensadas para Ubuntu 18.04. Puede verificar la
+<a href="https://docs.timescale.com/latest/getting-started/installation">guía de instalación de TimescaleDB</a> si está utilizando otro sistema
+operativo.</p>
+</div>
+<p>Agregue el siguiente repositorio de PostgreSQL para obtener la últimas
+versiones de los pquetes de PostgreSQL (esto es necesario para versiones de
+Ubuntu menores a 19.04).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># `lsb_release -c -s` should return the correct codename of your OS</span>
+<span class="nb">echo</span> <span class="s2">&quot;deb http://apt.postgresql.org/pub/repos/apt/ </span><span class="k">$(</span>lsb_release -c -s<span class="k">)</span><span class="s2">-pgdg main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/pgdg.list
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc <span class="p">|</span> sudo apt-key add -
+sudo apt-get update
+</code></pre></div>
+<p>Agregue el repositorio de TimescaleDB y luego instale TimescaleDB, que al
+hacerlo automaticamente descargará e instalará también la versión correcta
+del servidor de PostgreSQL.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add TimescaleDBs PPA</span>
+sudo add-apt-repository -y ppa:timescale/timescaledb-ppa
+sudo apt-get update
+
+<span class="c1"># Now install appropriate package for PG version</span>
+sudo apt install timescaledb-postgresql-11
+</code></pre></div>
+<p>Es recomendable que utilice la herramienta <code>timescaledb-tune</code> para ajustar y
+optimizar la base de datos para TimescaleDB.</p>
+<div class="highlight"><pre><span></span><code>sudo timescaledb-tune
+</code></pre></div>
+<p>Ahora, instale la extensión PostGIS 3 para esta versión de PostgreSQL.</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install -y postgresql-11-postgis-3
+</code></pre></div>
+<p>Finalmente, reinicie la instancia de PostgreSQL.</p>
+<div class="highlight"><pre><span></span><code>sudo service postgresql restart
+</code></pre></div>
+<h3 id="python-redis-gdal">Python, Redis, GDAL<a class="headerlink" href="#python-redis-gdal" title="Permanent link">&para;</a></h3>
+<p>Instale Python y otras dependencias como GDAL y el servidor de Redis.</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install -y <span class="se">\</span>
+  build-essential <span class="se">\</span>
+  git <span class="se">\</span>
+  gdal-bin <span class="se">\</span>
+  gettext <span class="se">\</span>
+  libgdal-dev <span class="se">\</span>
+  libpq-dev <span class="se">\</span>
+  libproj-dev <span class="se">\</span>
+  python3 <span class="se">\</span>
+  python3-dev <span class="se">\</span>
+  python3-pip <span class="se">\</span>
+  redis-server
+</code></pre></div>
+<h3 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h3>
+<p>Nginx se utiliza para servir tanto el backend (API y administrador) como el
+frontend (sitio web de la plataforma).</p>
+<p>Instale Nginx desde los repositorios de Ubuntu:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install nginx
+</code></pre></div>
+<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
+<h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
+<p>Primero clone el repositorio del backend.</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/undp/satlomas-back.git
+<span class="nb">cd</span> satlomas-back/
+</code></pre></div>
+<p>Para instalar las dependencias correctas del backend, debe instalar el
+manejador de paquetes <a href="https://pipenv.pypa.io/en/latest/">Pipenv</a>.</p>
+<div class="highlight"><pre><span></span><code>sudo -H pip3 install -U pipenv
+</code></pre></div>
+<p>Luego, ejecute lo siguiente para instalar todas las dependencias necesarias.
+Esto creará un entorno virtual para este proyecto.</p>
+<div class="highlight"><pre><span></span><code>pipenv install
+</code></pre></div>
+<p>Una vez que finalize la instalación, estará listo para configurar el backend.</p>
+<h3 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h3>
+<h4 id="base-de-datos">Base de datos<a class="headerlink" href="#base-de-datos" title="Permanent link">&para;</a></h4>
+<p>Cree un rol de superusuario para el usuario que está utilizando actualmente.
+Si sabe que va a ejecutar PostgreSQL con otros usuario, por favor reemplaze
+la variable <code>$USER</code> como corresponde.</p>
+<div class="highlight"><pre><span></span><code>sudo -u postgres createuser -s <span class="nv">$USER</span>
+</code></pre></div>
+<p>Cree la base de datos.</p>
+<div class="highlight"><pre><span></span><code>createdb satlomas
+</code></pre></div>
+<p>Configure una contraseña para el usuario que acaba de crear. Ejecute el
+siguiente comando <em>reemplazando</em> <code>foobar</code> por una contraseña única:</p>
+<div class="admonition warning">
+<p class="admonition-title">Contraseña</p>
+<p>Es muy importante que defina una contraseña única y dificil de adivinar.</p>
+</div>
+<div class="highlight"><pre><span></span><code>psql satlomas -c <span class="s2">&quot;ALTER USER </span><span class="nv">$USER</span><span class="s2"> WITH PASSWORD &#39;foobar&#39;&quot;</span>
+</code></pre></div>
+<p>Agregue las extensiones TimescaleDB y PostGIS a la base de datos creada.</p>
+<div class="highlight"><pre><span></span><code>psql satlomas -c <span class="s2">&quot;CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE&quot;</span>
+psql satlomas -c <span class="s2">&quot;CREATE EXTENSION IF NOT EXISTS postgis CASCADE&quot;</span>
+</code></pre></div>
+<h4 id="registracion-en-copernicus-open-access-hub">Registración en Copernicus Open Access Hub<a class="headerlink" href="#registracion-en-copernicus-open-access-hub" title="Permanent link">&para;</a></h4>
+<p>Para que la plataforma pueda descargar los productos del satélite Sentinel-1
+y Sentinel-2 de la ESA, es necesario estar registrado en <a href="https://scihub.copernicus.eu/">Copernicus Open
+Access Hub</a>.</p>
+<p>Para registrase, ingrese <a href="https://scihub.copernicus.eu/dhus/#/self-registration">aquí</a>. Tome nota del <strong>nombre de usuario</strong> y
+<strong>contraseña</strong> dado que será necesario al momento de configurar el backend.</p>
+<h4 id="registracion-en-nasa-earthdata">Registración en NASA EarthData<a class="headerlink" href="#registracion-en-nasa-earthdata" title="Permanent link">&para;</a></h4>
+<p>Para descargar los productos de MODIS VI, es necesario estar registrado en
+<a href="https://urs.earthdata.nasa.gov/">NASA EarthData</a>.</p>
+<p>Puede registrarse ingresando <a href="https://urs.earthdata.nasa.gov/users/new">aquí</a>. Tome nota del <strong>nombre de usuario</strong> y
+<strong>contraseña</strong> dado que será necesario al momento de configurar el backend.</p>
+<h4 id="variables-de-entorno">Variables de entorno<a class="headerlink" href="#variables-de-entorno" title="Permanent link">&para;</a></h4>
+<p>Copie <code>env.sample</code> y guarde un archivo nuevo llamada <code>.env</code>.</p>
+<div class="highlight"><pre><span></span><code>cp env.sample .env
+</code></pre></div>
+<p>Ahora edite <code>.env</code> según sus necesidades. El archivo <code>env.sample</code> es un
+ejemplo con valores por defecto para algunas variables, pero algunas de ellas
+debe completarlas. A continuación se describen las variables que deben ser
+configuradas para el funcionamiento de la plataforma.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SECRET_KEY</code></td>
+<td>String único de caracteres alfanuméricos, utilizado para firmas criptográficas. Puede generar uno <a href="https://djecrety.ir/">aquí</a>.</td>
+</tr>
+<tr>
+<td><code>ALLOWED_HOSTS</code></td>
+<td>Lista de <em>hosts</em> habilitados. Debería ingresar el dominio y/o IP pública del servidor</td>
+</tr>
+<tr>
+<td><code>DB_USER</code></td>
+<td>Usuario de la BD (debería ser el nombre del usuario actual)</td>
+</tr>
+<tr>
+<td><code>DB_PASSWORD</code></td>
+<td>Contraseña de la BD (la contraseña que definió antes)</td>
+</tr>
+<tr>
+<td><code>SCIHUB_USER</code></td>
+<td>Usuario de <a href="#registracion-en-copernicus-open-access-hub">SciHub</a></td>
+</tr>
+<tr>
+<td><code>SCIHUB_PASS</code></td>
+<td>Contraseña de <a href="#registracion-en-copernicus-open-access-hub">SciHub</a></td>
+</tr>
+<tr>
+<td><code>MODIS_USER</code></td>
+<td>Usuario de <a href="#registracion-en-nasa-earthdata">EarthData</a></td>
+</tr>
+<tr>
+<td><code>MODIS_PASS</code></td>
+<td>Contraseña de <a href="#registracion-en-nasa-earthdata">EarthData</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="inicializacion">Inicialización<a class="headerlink" href="#inicializacion" title="Permanent link">&para;</a></h3>
+<p>Ingrese al entorno virtual creado por Pipenv, y proceda con la inicialización
+de la base de datos.</p>
+<div class="highlight"><pre><span></span><code>pipenv shell
+./manage.py migrate   <span class="c1"># Correr las migraciones</span>
+</code></pre></div>
+<p>Antes de continuar, debería generar los archivos estáticos, necesarios para el
+panel de administrador:</p>
+<div class="highlight"><pre><span></span><code>./manage.py collectstatic
+</code></pre></div>
+<p>Finalmente, cree un <em>superusuario</em> para SatLomas. Este será el primer usuario
+administrador, con el que podrá registrar nuevos administradores o usuarios.</p>
+<div class="highlight"><pre><span></span><code>./manage.py createsuperuser
+</code></pre></div>
+<p>Luego de seguir las instrucciones del comando, tendrá un usuario y contraseña
+para ingresar al administrador del backend.</p>
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h2>
+<h3 id="instalacion_1">Instalación<a class="headerlink" href="#instalacion_1" title="Permanent link">&para;</a></h3>
+<p>Primero debe instalar Node v12. Ejecute los siguientes comandos:</p>
+<div class="highlight"><pre><span></span><code>curl -sL https://deb.nodesource.com/setup_12.x <span class="p">|</span> sudo -E bash -
+sudo apt-get install -y nodejs
+</code></pre></div>
+<p>Luego, clone el repositorio del frontend:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/undp/satlomas-front.git
+<span class="nb">cd</span> satlomas-front/
+</code></pre></div>
+<p>Instale todas las dependencias con <code>npm</code>:</p>
+<div class="highlight"><pre><span></span><code>npm install
+</code></pre></div>
+<p>Finalmente, ejecute el siguiente comando para generar un <em>build</em> del sitio
+web:</p>
+<div class="highlight"><pre><span></span><code>npm run build
+</code></pre></div>
+<h2 id="configuracion-de-servicios">Configuración de servicios<a class="headerlink" href="#configuracion-de-servicios" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Más información</p>
+<p>Esta sección de la documentación está basada en la guía <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04">How To Set Up
+Django with Postgres, Nginx, and Gunicorn on Ubuntu 18.04</a>, de Digital
+Ocean. Para más información para depurar los servicios, puede
+consultarla.</p>
+</div>
+<h3 id="backend_1">Backend<a class="headerlink" href="#backend_1" title="Permanent link">&para;</a></h3>
+<p>Comience creando un nuevo archivo para el socket del servicio del backend:</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/systemd/system/gunicorn.socket
+</code></pre></div>
+<p>Copie lo siguiente dentro del archivo:</p>
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+</code></pre></div>
+<p>Guarde y ciérrelo.</p>
+<p>Para el siguiente paso es necesario que verifique la ruta del entorno virtual
+del backend. Desde el directorio del código del backend, ejecute el siguiente
+comando:</p>
+<div class="highlight"><pre><span></span><code>pipenv --venv
+</code></pre></div>
+<p>Tome nota de la ruta que devuelve el comando.</p>
+<p>Ahora, cree un nuevo archivo para el servicio. El nombre de archivo del
+servicio debería coincidir con el del socket, a excepción de la extensión:</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/systemd/system/gunicorn.service
+</code></pre></div>
+<p>Copie el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/satlomas-back
+ExecStart=/home/ubuntu/.local/share/virtualenvs/satlomas-back-XVGhZdP0/bin/gunicorn \
+          --access-logfile - \
+          --timeout 600 \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          satlomas.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div>
+<p>Ajuste <code>WorkingDirectory</code> a la ruta <em>absoluta</em> del repositorio clonado del
+backend. Luego, ajuste la ruta absoluta de <code>ExecStart</code> a la del entorno
+virtual de Pipenv, agregando al final <code>/bin/gunicorn</code>. También será necesario
+que defina el <code>User</code> y <code>Group</code> con el que se ejecutará el proceso. Este
+usuario debería tener permisos para poder acceder al repositorio del backend.</p>
+<p>Puede ajustar también la cantidad de <em>workers</em> y el timeout permitido, o
+agregar otras opciones de Gunicorn si es necesario.</p>
+<p>Finalmente, puede iniciar y activar el servicio. Esto creará un archivo
+<code>/run/gunicorn.sock</code> y se iniciará el servidor. Cuando se realiza una
+conexión al socket, systemd automaticamente inicia el servicio
+<code>gunicorn.service</code> para manejar el pedido.</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl start gunicorn.socket
+sudo systemctl <span class="nb">enable</span> gunicorn.socket
+</code></pre></div>
+<h3 id="frontend_1">Frontend<a class="headerlink" href="#frontend_1" title="Permanent link">&para;</a></h3>
+<p>De manera similar, para el servidor web del frontend será administrador por
+systemd.</p>
+<p>Cree un nuevo archivo para el servicio del frontend:</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/systemd/system/satlomas-front.service
+</code></pre></div>
+<p>y copie el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=Platform frontend next.js app
+After=network.target
+
+[Service]
+Environment=NODE_ENV=production
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/satlomas-front
+ExecStart=/usr/bin/node server.js
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div>
+<p>Ajuste <code>WorkingDirectory</code> a la ruta <em>absoluta</em> del repositorio clonado del
+frontend. También será necesario que defina el <code>User</code> y <code>Group</code> con el que se
+ejecutará el proceso. Este usuario debería tener permisos para poder acceder
+al repositorio del backend.</p>
+<p>Finalmente, puede iniciar y activar el servicio.</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl start satlomas-front.service
+sudo systemctl <span class="nb">enable</span> satlomas-front.service
+</code></pre></div>
+<h3 id="nginx_1">Nginx<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h3>
+<p>A modo ejemplo, se presentan dos archivos de configuración para Nginx, para
+servir el backend y frontend respectivamente.</p>
+<p>En este ejemplo, se asume que se tienen registrado el dominio <code>satlomas.com</code>,
+y dos registros A para los subdominios:</p>
+<ol>
+<li><code>api.satlomas.com</code>: Backend</li>
+<li><code>app.satlomas.com</code>: Frontend</li>
+</ol>
+<p>Cree un nuevo archivo <code>/etc/nginx/sites-available/satlomas-back</code></p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/nginx/sites-available/satlomas-back
+</code></pre></div>
+<p>y copie dentro de éste el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code>server {
+  server_name api.satlomas.com;
+
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+    root /home/ubuntu/satlomas-back;
+  }
+
+  location / {
+    include proxy_params;
+    proxy_pass http://unix:/run/gunicorn.sock;
+
+    proxy_connect_timeout       600;
+    proxy_send_timeout          600;
+    proxy_read_timeout          600;
+    send_timeout                600;
+  }
+}
+</code></pre></div>
+<p>Ajuste <code>server_name</code> al subdominio que corresponda al backend, y <code>root</code> a la
+ruta absoluta del repositorio del backend (en este caso, el repositorio fue
+clonado dentro del directorio <em>home</em> del usuario <code>ubuntu</code>).</p>
+<p>Luego cree otro archivo <code>/etc/nginx/sites-available/satlomas-front</code></p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/nginx/sites-available/satlomas-front
+</code></pre></div>
+<p>y copie lo siguiente:</p>
+<div class="highlight"><pre><span></span><code>server {
+    server_name app.satlomas.com;
+
+    location /static/ {
+        root /home/ubuntu/satlomas-front/public;
+    }
+
+    location /_next/static/ {
+        alias /home/ubuntu/satlomas-front/.next/static/;
+    }
+
+    location / {
+      # default port, could be changed if you use next with custom server
+      proxy_pass http://localhost:3000;
+
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection &#39;upgrade&#39;;
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
+
+      # if you have try_files like this, remove it from our block
+      # otherwise next app will not work properly
+      # try_files $uri $uri/ =404;
+    }
+}
+</code></pre></div>
+<p>Nuevamente, ajuste <code>server_name</code> al subdominio correspndiente para el
+frontend, y las ocurrencias de <code>/home/ubuntu/satlomas-front</code> a la ruta
+absoluta del repositorio del frontend.</p>
+<p>Finalmente, haga enlaces simbólicos de estos dos archivos al directorio
+<code>/etc/nginx/sites-enabled/</code> para habilitar los sitios:</p>
+<div class="highlight"><pre><span></span><code>sudo ln -s /etc/nginx/sites-available/satlomas-back /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/satlomas-front /etc/nginx/sites-enabled/
+</code></pre></div>
+<p>y reinicie Nginx:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart nginx
+</code></pre></div>
+<p>Con esto concluye la implementación de la plataforma. Podrá acceder al
+backend desde <code>http://api.satlomas.com/</code>, y al frontend desde
+<code>http://app.satlomas.com/</code> (suponiendo que configuró los sitios con esos
+subdominios).</p>
+<h4 id="configuracion-ssl">Configuración SSL<a class="headerlink" href="#configuracion-ssl" title="Permanent link">&para;</a></h4>
+<p>Es posible configurar SSL a través de los certificados gratuitos de <a href="https://letsencrypt.org/">Let's
+Encrypt</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Instrucciones para Ubuntu 18.04</p>
+<p>Las siguientes instrucciones están basadas en la guía de Certbot para la
+distribución de Ubuntu 18.04 y Nginx.  Si desea ver más información puede
+acceder <a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx">aquí</a>.</p>
+</div>
+<p>Deberá agregar el PPA de Certbot a la lista de repositorios.  Para esto,
+ejecute los siguientes comandos:</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get update
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository -y universe
+sudo add-apt-repository -y ppa:certbot/certbot
+sudo apt-get update
+</code></pre></div>
+<p>Ejecute este comando para instalar Certbot:</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install -y certbot python3-certbot-nginx
+</code></pre></div>
+<p>Ahora ejecute este comando para obtener un certificado y hacer que Certbot
+edite los archivos de configuración de Nginx de los sitios habilitados
+automáticamente.</p>
+<div class="highlight"><pre><span></span><code>sudo certbot --nginx
+</code></pre></div>
+<p>El certificado se debería actualizar automaticamente a través del servicio de
+Certbot.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        
+        <a href="../methodology/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Metodología" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Metodología
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

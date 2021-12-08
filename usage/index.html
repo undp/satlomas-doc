@@ -1,0 +1,1390 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de SatLomas">
+      
+      
+      
+      
+        <link rel="canonical" href="https://undp.github.io/satlomas-doc/usage/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+    
+    
+      
+        <title>Guía de Uso - SatLomas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-de-uso" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="SatLomas" class="md-header__button md-logo" aria-label="SatLomas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SatLomas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guía de Uso
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/undp/satlomas-doc/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SatLomas" class="md-nav__button md-logo" aria-label="SatLomas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    SatLomas
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/undp/satlomas-doc/" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Guía de Uso
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Guía de Uso
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inicio" class="md-nav__link">
+    Inicio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacion-terrestre" class="md-nav__link">
+    Observación terrestre
+  </a>
+  
+    <nav class="md-nav" aria-label="Observación terrestre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobertura-verde" class="md-nav__link">
+    Cobertura Verde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobertura-de-loma-perdida" class="md-nav__link">
+    Cobertura de Loma Perdida
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-de-objetos" class="md-nav__link">
+    Detección de Objetos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estaciones-meteorologicas" class="md-nav__link">
+    Estaciones Meteorológicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estaciones Meteorológicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapa" class="md-nav__link">
+    Mapa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    Dashboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitio" class="md-nav__link">
+    Sitio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiempo" class="md-nav__link">
+    Tiempo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla" class="md-nav__link">
+    Tabla
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuarios" class="md-nav__link">
+    Usuarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reglas" class="md-nav__link">
+    Reglas
+  </a>
+  
+    <nav class="md-nav" aria-label="Reglas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-parametro" class="md-nav__link">
+    Reglas de Parámetro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-ambito" class="md-nav__link">
+    Reglas de Ámbito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-tipo-de-ambito" class="md-nav__link">
+    Reglas de Tipo de Ámbito
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alertas" class="md-nav__link">
+    Alertas
+  </a>
+  
+    <nav class="md-nav" aria-label="Alertas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-verificacion-de-regla" class="md-nav__link">
+    Diagrama de verificación de regla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-para-reglas-de-parametro" class="md-nav__link">
+    Diagrama para reglas de parámetro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-para-reglas-de-tipo-de-ambito" class="md-nav__link">
+    Diagrama para reglas de tipo de ámbito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-para-reglas-de-ambito" class="md-nav__link">
+    Diagrama para reglas de ámbito
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes" class="md-nav__link">
+    Imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfil" class="md-nav__link">
+    Perfil
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administradores" class="md-nav__link">
+    Administradores
+  </a>
+  
+    <nav class="md-nav" aria-label="Administradores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#panel-de-administracion" class="md-nav__link">
+    Panel de administración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuarios_1" class="md-nav__link">
+    Usuarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambitos" class="md-nav__link">
+    Ámbitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estaciones-meteorologicas_1" class="md-nav__link">
+    Estaciones meteorológicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estaciones meteorológicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traslado-de-estaciones" class="md-nav__link">
+    Traslado de estaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auditoria" class="md-nav__link">
+    Auditoría
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodology/" class="md-nav__link">
+        Metodología
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy/" class="md-nav__link">
+        Implementación
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inicio" class="md-nav__link">
+    Inicio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacion-terrestre" class="md-nav__link">
+    Observación terrestre
+  </a>
+  
+    <nav class="md-nav" aria-label="Observación terrestre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobertura-verde" class="md-nav__link">
+    Cobertura Verde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobertura-de-loma-perdida" class="md-nav__link">
+    Cobertura de Loma Perdida
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deteccion-de-objetos" class="md-nav__link">
+    Detección de Objetos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estaciones-meteorologicas" class="md-nav__link">
+    Estaciones Meteorológicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estaciones Meteorológicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapa" class="md-nav__link">
+    Mapa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    Dashboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sitio" class="md-nav__link">
+    Sitio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiempo" class="md-nav__link">
+    Tiempo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla" class="md-nav__link">
+    Tabla
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuarios" class="md-nav__link">
+    Usuarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reglas" class="md-nav__link">
+    Reglas
+  </a>
+  
+    <nav class="md-nav" aria-label="Reglas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-parametro" class="md-nav__link">
+    Reglas de Parámetro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-ambito" class="md-nav__link">
+    Reglas de Ámbito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-tipo-de-ambito" class="md-nav__link">
+    Reglas de Tipo de Ámbito
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alertas" class="md-nav__link">
+    Alertas
+  </a>
+  
+    <nav class="md-nav" aria-label="Alertas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-verificacion-de-regla" class="md-nav__link">
+    Diagrama de verificación de regla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-para-reglas-de-parametro" class="md-nav__link">
+    Diagrama para reglas de parámetro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-para-reglas-de-tipo-de-ambito" class="md-nav__link">
+    Diagrama para reglas de tipo de ámbito
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-para-reglas-de-ambito" class="md-nav__link">
+    Diagrama para reglas de ámbito
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagenes" class="md-nav__link">
+    Imágenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfil" class="md-nav__link">
+    Perfil
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administradores" class="md-nav__link">
+    Administradores
+  </a>
+  
+    <nav class="md-nav" aria-label="Administradores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#panel-de-administracion" class="md-nav__link">
+    Panel de administración
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuarios_1" class="md-nav__link">
+    Usuarios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambitos" class="md-nav__link">
+    Ámbitos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estaciones-meteorologicas_1" class="md-nav__link">
+    Estaciones meteorológicas
+  </a>
+  
+    <nav class="md-nav" aria-label="Estaciones meteorológicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traslado-de-estaciones" class="md-nav__link">
+    Traslado de estaciones
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auditoria" class="md-nav__link">
+    Auditoría
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/undp/satlomas-doc/edit/master/docs/usage.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="guia-de-uso">Guía de Uso<a class="headerlink" href="#guia-de-uso" title="Permanent link">&para;</a></h1>
+<p>En esta sección se describen las diferentes vistas que conforman el frontend
+de la plataforma, y de qué manera se pueden utilizar las herramientas
+provistas para visualizar y analizar los resultados de los procesos
+automáticos aplicados sobre imágenes satelitales y de las estaciones
+meteorológicas.</p>
+<p>Este texto está dirigido tanto para usuarios anónimos, como para usuarios
+registrados y aquellos con el rol de administrador.</p>
+<h2 id="inicio">Inicio<a class="headerlink" href="#inicio" title="Permanent link">&para;</a></h2>
+<p>En la página de inicio se listan diferentes componentes que forman parte de
+la plataforma. Desde aquí se puede acceder a los mapas del módulo de
+Observación Terrestre, como el mapa de <strong>Cobertura Verde</strong> o el mapa de <strong>Cobertura
+de Loma Perdida</strong>, y por otro lado, al Mapa y el <strong>Dashboard</strong> del módulo de
+Estaciones Meteorológicas.</p>
+<p><img alt="Captura de inicio" src="../img/Satlomas_homepage.png" /></p>
+<h2 id="observacion-terrestre">Observación terrestre<a class="headerlink" href="#observacion-terrestre" title="Permanent link">&para;</a></h2>
+<h3 id="cobertura-verde">Cobertura Verde<a class="headerlink" href="#cobertura-verde" title="Permanent link">&para;</a></h3>
+<p>El aplicativo de mapa de cobertura verde presenta la capa de cobertura de vegetación del
+ecosistema de lomas, basada en el producto de MODIS de índices de
+vegetación (MOD13Q1).</p>
+<p><img alt="" src="../img/Satlomas_coberturaverde.png" /></p>
+<p>En la esquina superior izquierda se encuentra el control de Filtro, que
+permite filtrar los resultados de la serie de tiempo para un ámbito y un
+rango de fechas específico:</p>
+<p><img alt="" src="img/seleccion-de-ambitos.mp4" /></p>
+<p>Desde el selector de Tipo de Ámbito se puede seleccionar un tipo de ámbito.
+Al seleccionar uno, en el mapa se actualizará la capa de ámbitos del tipo
+seleccionado.</p>
+<p><img alt="" src="../img/vi4.png" /></p>
+<p>También se puede ajustar la fecha de comienzo y fin de la serie de tiempo.
+Por defecto, se toma la primer fecha y última fecha con datos cargados en la
+base de datos.</p>
+<p><img alt="" src="../img/vi5.png" /></p>
+<p>Por defecto se visualiza la capa NDVI, pero también es posible visualizar en
+simultaneo una máscara de vegetación, resultado de la umbralización de la
+capa NDVI, (<em>Vegetation mask</em>) y una máscara de nubes (<em>Cloud Mask</em>),
+extraída del mismo producto de MODIS. Estas capas se pueden activar o
+desactivar haciendo clic en el ícono de Capas en la esquina inferior
+izquierda, y en cada casillero.</p>
+<p><img alt="" src="../img/vi6.png" /></p>
+<p>También es posible ajustar la opacidad de cada capa ajustando el control
+deslizante al lado del nombre de la capa.</p>
+<p>Debajo del ícono de Capas, se encuentra el control de Selección de Períodos,
+que permite seleccionar una fecha en particular, para visualizar las capas de
+ese período en el mapa.</p>
+<p><img alt="" src="../img/Satlomas_selectordeescena.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Filtro vs. selector de fechas</p>
+<p>Esta selección de fecha sólo afecta a las capas visualizadas en el mapa,
+no a la serie de tiempo. Para ajustar las fechas de la serie de tiempo,
+debe hacerlo desde el control de Filtro.</p>
+</div>
+<h3 id="cobertura-de-loma-perdida">Cobertura de Loma Perdida<a class="headerlink" href="#cobertura-de-loma-perdida" title="Permanent link">&para;</a></h3>
+<p>La vista de cobertura de Loma Perdida funciona de manera similar al mapa de
+Cobertura Verde.  Las capas disponibles en este caso son:</p>
+<ul>
+<li><em>Loss mask</em>: Máscara de loma perdida. Resultado del producto de clasificación
+  de cobertura de loma perdida.</li>
+<li><em>Sentinel-1</em>: Imagen en color falso del mosaico de Sentinel-1 para el período
+  actual. Las bandas utilizadas fueron VV, VH y la proporción VV/VH como
+  rojo, verde y azul respectivamente.</li>
+<li><em>Sentinel-2</em>: Imagen en color verdadero del mosaico de Sentinel-2 para el
+  período actual.</li>
+</ul>
+<p><img alt="" src="../img/lomas1.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Fusión de vistas</p>
+<p>Próximamente esta vista será fusionada junto con la de Detección de
+Cambios en una única vista Detección de Cambios en Lomas.</p>
+</div>
+<h3 id="deteccion-de-objetos">Detección de Objetos<a class="headerlink" href="#deteccion-de-objetos" title="Permanent link">&para;</a></h3>
+<p>En esta vista se visualiza el producto del modelo de detección de objetos
+para escenas del satélite PeruSat-1.</p>
+<p>Este producto consiste en una capa vectorial, donde se localizan objetos de
+interés, relacionados a actividad no monitoreada e invasión de tierras sobre
+las Lomas.</p>
+<p><img alt="" src="../img/Satlomas_lomaperdida.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Objetos de interés</p>
+<p>Por el momento el modelo detecta <em>techos de viviendas informales</em>. Se
+está desarrollando un nuevo modelo de detección con otros objetos y
+patrones visuales.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Fusión de vistas</p>
+<p>Próximamente esta vista será fusionada junto con la de Covertura de Loma
+perdida en una única vista Detección de Cambios en Lomas.</p>
+</div>
+<h2 id="estaciones-meteorologicas">Estaciones Meteorológicas<a class="headerlink" href="#estaciones-meteorologicas" title="Permanent link">&para;</a></h2>
+<p>La plataforma incluye un módulo de estaciones hidrometeorológicas ligeras, donde
+se almacenan, analizan y visualizan mediciones recolectadas por sensores de
+clima acoplados a un recolector de neblina estándar, instalados en diferentes
+localidades o <em>sitios</em> del ecosistema.  Estos sensores automáticos envían a
+través de un nodo Lorawan la información en tiempo real a la plataforma.</p>
+<h3 id="mapa">Mapa<a class="headerlink" href="#mapa" title="Permanent link">&para;</a></h3>
+<p>Desde el frontend se pueden acceder a un mapa de Sitios, donde se presentan
+todos los sitios en donde se instalaron estaciones y se recolectaron datos en la
+historia, y se ubican con con marcadores en el mapa.</p>
+<p><img alt="" src="../img/stations-map1.png" /></p>
+<p>Al cargar, el mapa se centra de tal manera de poder mostrar todos los
+marcadores en pantalla. Si desea buscar un sitio por nombre o por nombre
+del lugar donde está instalado, haga clic en el ícono Buscar ("lupa"), en la
+esquina superior izquierda. Se desplegará al costado izquierdo un buscador
+donde podrá ingresar parte del nombre del sitio. Los resultados aparecerán
+automaticamente en la lista debajo del cuadro de entrada.</p>
+<p><img alt="" src="../img/stations-map2.png" /></p>
+<p>Si hace clic sobre un marcador en el mapa, se abrirá una ventana indicando el
+nombre y código de la estación configurada, y su lugar. También se mostrará, a
+modo de previsualización, un gráfico de serie de tiempo de un parámetro de los
+sensores de la estación asociada. Puede cambiar de parámetro haciendo clic sobre
+el selector que se encuentra arriba del gráfico.</p>
+<p><img alt="" src="../img/stations-map3.png" /></p>
+<p>Haciendo clic en el botón Dashboard podrá ingresar al dashboard de ese sitio
+seleccionado.</p>
+<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h3>
+<p>En esta vista se presentan una serie de gráficos de series de tiempo para cada
+parámetro recolectado por los sensores de la estación asociada a un sitio en
+particular. Por ejemplo, en los sensores instalados actualmente, se están
+recolectando estos parámetros:</p>
+<ul>
+<li>Altitud (msnm)</li>
+<li>Temperatura de Ambiente (°C)</li>
+<li>Presión Atmosférica (mbar)</li>
+<li>Temperatura Interna (°C)</li>
+<li>Material Particulado (PM1.0)</li>
+<li>Material Particulado (PM2.5)</li>
+<li>Material Particulado (PM4.0)</li>
+<li>Material Particulado (PM10.0)</li>
+<li>Humedad Relativa (%)</li>
+<li>Conteo de Tipping Bucket</li>
+<li>Velocidad del Viento (m/s)</li>
+<li>Dirección del Viento (grados)</li>
+</ul>
+<p><img alt="" src="../img/stations-dashboard1.png" /></p>
+<p>En la esquina superior derecha se encuentran dos controles de filtrado, que
+determinan qué datos se graficarán en el dashboard: <em>sitio</em> y <em>tiempo</em>.</p>
+<h4 id="sitio">Sitio<a class="headerlink" href="#sitio" title="Permanent link">&para;</a></h4>
+<p>Este control filtra las mediciones para un sitio en particular.</p>
+<p>Haciendo clic, se abrirá una ventana con un selector de sitios. Al
+seleccionarla, se actualizaran automaticamente todos los gráficos.</p>
+<p><img alt="" src="../img/stations-dashboard2.png" /></p>
+<h4 id="tiempo">Tiempo<a class="headerlink" href="#tiempo" title="Permanent link">&para;</a></h4>
+<p>Este control maneja varios aspectos del filtrado y visualización de las
+mediciones en el dashboard.</p>
+<p>Posee dos modos de functionamento:
+* <strong>Tiempo Real</strong>: Toma las mediciones hace cierta cantidad de tiempo hasta
+  ahora. En este modo los datos en la página se actualizan automáticamente,
+  sin necesidad de refrescarla.</p>
+<p><img alt="" src="../img/stations-dashboard3.png" /></p>
+<ul>
+<li><strong>Histórico</strong>: Toma las mediciones y las filtra en un rango de tiempo
+  (desde-hasta).  Permite trabajar con datos históricos.</li>
+</ul>
+<p><img alt="" src="../img/stations-dashboard4.png" /></p>
+<p>Ambos modos de operación tienen dos controles en común que determinan su
+funcionamiento:</p>
+<ul>
+<li><strong>Intervalo de agrupación</strong>: Define el interval en el que se agruparán los
+  datos. Por ejemplo: minuto, hora, día, semana, mes, año.</li>
+<li><strong>Función de agregación de tiempo</strong>: Define la función que se aplicará a cada
+  grupo de mediciones por intervalo. Por ejemplo: promedio, máximo, mínimo,
+  etc.</li>
+</ul>
+<h3 id="tabla">Tabla<a class="headerlink" href="#tabla" title="Permanent link">&para;</a></h3>
+<p>Esta vista es muy similar al dashboard, dado que se presentan los datos de
+mediciones de un sitio en particular, pero en formato de tabla. A diferencia del
+dashboard, la tabla tiene como columna cada uno de los parámetros, y como fila
+cada medición</p>
+<p><img alt="" src="../img/stations-data1.png" /></p>
+<p>Posee los mismos controles de filtrado que el dashboard (control de Sitio y de
+Tiempo), y en todo momento se puede dirigir de la vista de tabla al dashboard y
+vice versa, mantiendo la configuración de filtro, haciendo clic en <em>Dashboard</em>,
+en la esquina superior izquierda.</p>
+<p>Por otro lado, haciendo clic en <em>Descargar</em>, se podrá descargar la tabla en
+formato CSV (valores separados por coma), documento que puede ser abierto en
+otras aplicaciones como planillas de cálculo.</p>
+<h2 id="usuarios">Usuarios<a class="headerlink" href="#usuarios" title="Permanent link">&para;</a></h2>
+<p>Aquellos usuarios que hayan sido invitados y registrados en la plataforma por
+un administrador, podrán acceder a un panel de usuario y al sistema de
+Alertas. Puede iniciar sesión en todo momento hacinedo clic en el botón
+<em>Iniciar Sesión</em>, que se encuentra en la esquina superior derecha.</p>
+<p><img alt="" src="../img/users-1.png" /></p>
+<p>Luego ingrese su nombre de usuario y contraseña, y haga clic en <em>Ingresar</em>.</p>
+<p><img alt="" src="../img/login1.png" /></p>
+<p>Si no recuerda su contraseña, puede reestablecerla haciendo clic en
+<em>Solicitar una nueva</em> e ingresando la dirección de email con la que fue
+registrado. Al aceptar, se le enviará a su casilla un email con instrucciones
+para reestablecer su contraseña.</p>
+<p><img alt="" src="../img/reset1.png" /></p>
+<p>Una vez que está autenticado, notará que en el lugar donde antes estaba el
+botón <em>Iniciar sesión</em> ahora hay dos íconos:</p>
+<ul>
+<li><strong>Alertas</strong> (campana): Indica nuevas alertas (no vistas), y muestra una lista de
+  las últimas 5 notificaciones generadas.</li>
+<li><strong>Perfil</strong>: Permite acceder al panel de usuario, al perfil de usuario y cerrar la
+  sesión.</li>
+</ul>
+<p><img alt="" src="../img/users-2.png" /></p>
+<h3 id="reglas">Reglas<a class="headerlink" href="#reglas" title="Permanent link">&para;</a></h3>
+<p>El sistema de alertas y notificación de incidentes se basa en un conjunto de
+reglas definidas por el usuario. El usuario debe definir reglas para poder
+monitorear cambios de interés. De esta manera, el sistema no toma decisiones
+por su cuenta, si no que solamente informa cuando se captura una medición
+<em>anormal</em> según el criterio del usuario y permite facilmente hacer una
+evaluación posterior acerca de los cambios registrados.</p>
+<p>Dado las naturalezas de los datos que se procesan y cargan en la plataforma,
+tnato dle módulo de observación terrestre (productos del procesamiento de
+imágenes satelitales) y del módulo de estaciones meteorológicas (mediciones
+de sensores terrestres), el sistema define 3 tipos de reglas:</p>
+<ol>
+<li>Reglas de parámetro</li>
+<li>Reglas de tipo de ámbito</li>
+<li>Reglas de ámbito</li>
+</ol>
+<p>A continuación se describen cada uno de ellos, y se detalla como el usuario
+puede listar, definir, modificar o eliminar reglas.</p>
+<h4 id="reglas-de-parametro">Reglas de Parámetro<a class="headerlink" href="#reglas-de-parametro" title="Permanent link">&para;</a></h4>
+<p>Las Reglas de Parámetro aplican a cambios relacionados a un parámetro
+de una estación meteorológica.</p>
+<p><img alt="" src="../img/admin-parameter-rule1.png" /></p>
+<p>Una regla de parámetro se define con los siguientes atributos:</p>
+<ul>
+<li><strong>Estación</strong>: La estación sobre la cual aplica la regla. Este campo puede ser
+  vacío, en cuyo caso se aplicará a cualquier estación.</li>
+<li><strong>Parámetro</strong>: El parámetro sobre el cual aplica la regla.</li>
+<li><strong>Valor mínimo y máximo</strong>: Define el rango de valores máximos permitidos para el
+  parámetro de la estación. Si se observa una medición por fuera de esta rango,
+  se creará una alerta.</li>
+<li><strong>¿Es absoluto?</strong>: Determina si el rango válido de valores es en términos
+  absolutos o relativos con respecto a la medición anterior (del mismo
+  parámetro y estación).</li>
+</ul>
+<p><img alt="" src="../img/admin-parameter-rule2.png" /></p>
+<h4 id="reglas-de-ambito">Reglas de Ámbito<a class="headerlink" href="#reglas-de-ambito" title="Permanent link">&para;</a></h4>
+<p>Las Reglas de Ámbito aplican a cambios de cobertura en un ámbito en
+particular.</p>
+<p><img alt="" src="../img/admin-scope-rule1.png" /></p>
+<p>Una regla de ámbito se define con los siguientes atributos:</p>
+<ul>
+<li><strong>Ámbito</strong>: El ámbito sobre el cual aplica la regla. Este campo puede ser
+  vacío, en cuyo caso se aplicará a cualquier ámbito.</li>
+<li><strong>Tipo de Cobertura</strong>: El tipo de cobertura en el que aplica la regla. Por el
+  momento hay dos opciones: <em>Vegetación en Lomas</em> (cmabios de Cobertura Verde)
+  y <em>Pérdida de Loma</em> (cambios de Cobertura de Loma Perdida). También es
+  posible seleccionar <em>[Cualquiera]</em> para que aplique sobre cualquiera de los
+  dos tipos.</li>
+<li><strong>Tipo de Cambio</strong>: Determina si el rango de valores es en términos de Área o
+  Porcentaje de área. Utilizar Porcentaje permite definir una regla en términos
+  de area relativos a la superficie de los ámbitos.</li>
+<li><strong>Valor mínimo y máximo</strong>: Define el rango de valores permitidos. Si el tipo
+  de cambio es Area, los valores representan hectáreas. Si el tipo de cambio es
+  Porcentaje, los valores son porcentajes (entre 0 y 100).</li>
+</ul>
+<p><img alt="" src="../img/admin-scope-rule2.png" /></p>
+<h4 id="reglas-de-tipo-de-ambito">Reglas de Tipo de Ámbito<a class="headerlink" href="#reglas-de-tipo-de-ambito" title="Permanent link">&para;</a></h4>
+<p>Las Reglas de Tipo de Ámbito aplican a cambios de cobertura en todos los
+ámbitos de un tipo de ámbitos.</p>
+<p><img alt="" src="../img/admin-scope-type-rule1.png" /></p>
+<p>Una regla de tipo de ámbito se define con los siguientes atributos:</p>
+<ul>
+<li><strong>Tipo de Ámbito</strong>: El tipo de ámbito sobre el cual aplica la regla. Este
+  campo puede ser vacío, en cuyo caso se aplicará a cualquier tipo de ámbito.</li>
+<li><strong>Tipo de Cobertura</strong>: El tipo de cobertura en el que aplica la regla. Por el
+  momento hay dos opciones: <em>Vegetación en Lomas</em> (cmabios de Cobertura Verde)
+  y <em>Pérdida de Loma</em> (cambios de Cobertura de Loma Perdida). También es
+  posible seleccionar <em>[Cualquiera]</em> para que aplique sobre cualquiera de los
+  dos tipos.</li>
+<li><strong>Tipo de Cambio</strong>: Determina si el rango de valores es en términos de Área o
+  Porcentaje de área. Utilizar Porcentaje permite definir una regla en términos
+  de area relativos a la superficie de los ámbitos.</li>
+<li><strong>Valor mínimo y máximo</strong>: Define el rango de valores permitidos. Si el tipo
+  de cambio es Area, los valores representan hectáreas. Si el tipo de cambio es
+  Porcentaje, los valores son porcentajes (entre 0 y 100).</li>
+</ul>
+<p><img alt="" src="../img/admin-scope-type-rule2.png" /></p>
+<h3 id="alertas">Alertas<a class="headerlink" href="#alertas" title="Permanent link">&para;</a></h3>
+<p>Cada vez que se carguen mediciones nuevas en la base de datos, se ejecuta el
+motor de reglas, para determinar si se deben generar nuevas alertas.</p>
+<p>En este momento, las condiciones para que se dispare el motor de reglas son
+las siguientes:</p>
+<ol>
+<li>Se procesó y cargó un nuevo producto del modelo de Cobertura Verde.
+   <em>Frecuencia</em>: Una vez por mes</li>
+<li>Se procesó y cargó un nuevo producto del modelo de Cobertura de Loma Perdida
+   <em>Frecuencia</em>: Una vez por mes</li>
+<li>Se procesó y cargó un nuevo producto del modelo de Detección de Objetos
+   <em>Frecuencia</em>: Depende de la frecuencia de los pedidos de escenas de
+   PeruSat-1 a CONIDA.</li>
+<li>Se cargó una nueva medición de una estación meteorológica
+   <em>Frecuencia</em>: Cada 15 minutos</li>
+</ol>
+<p>El motor de reglas recorre, para todos los usuarios, cada una de las reglas
+definidas, y verifica si la nueva medición rompe esa regla. Si esto sucede,
+se crea una alerta y se notifica.</p>
+<p>Las alertas generadas se listan en la sección Alertas del Panel de Usuario,
+donde se detalla la fecha en la que ocurrió la notificación, la regla
+afectada y una descripción de la causa de la alerta.</p>
+<p><img alt="" src="../img/admin-alerts1.png" /></p>
+<p>A continuación se describen diagramas de flujo acerca del funcionamiento del
+motor de reglas.</p>
+<h4 id="diagrama-de-verificacion-de-regla">Diagrama de verificación de regla<a class="headerlink" href="#diagrama-de-verificacion-de-regla" title="Permanent link">&para;</a></h4>
+<p>Este es un diagrama del algoritmo de verificación de una regla en particular.
+El motor realiza este procedimiento para cada regla y usuario.</p>
+<div class="mermaid">graph TB;
+    inicio([Inicio])--&gt;esAbs{{es absoluto?}};
+    esAbs-- sí --&gt;valAbs[Toma como valor &lt;br /&gt;la medicion actual];
+    esAbs-- no --&gt;valRel[Toma como valor &lt;br /&gt;la diferencia &lt;br /&gt;entre medicion actual y &lt;br /&gt;medicion anterior];
+    valAbs--&gt;esValMenorMin{{es valor menor &lt;br /&gt;al mínimo valido?}};
+    valRel--&gt;esValMenorMin;
+    esValMenorMin-- sí --&gt;crear[Crear alerta];
+    esValMenorMin-- no --&gt;esValMayorMax[es valor mayor &lt;br /&gt;al máximo válido?];
+    esValMayorMax-- sí --&gt;crear;
+    esValMayorMax-- no --&gt;fin([Fin]);
+    crear--&gt;debeNotificar{{debe notificar por mail?}};
+    debeNotificar-- sí --&gt;notificar[Enviar notificación por mail];
+    debeNotificar-- no --&gt;fin;
+    notificar--&gt;fin;</div>
+<h4 id="diagrama-para-reglas-de-parametro">Diagrama para reglas de parámetro<a class="headerlink" href="#diagrama-para-reglas-de-parametro" title="Permanent link">&para;</a></h4>
+<p>Diagrama que describe como se filtran las mediciones para una regla de
+parámetro.</p>
+<div class="mermaid">graph LR;
+    inicio([Inicio])--&gt;todas{{en todas las estaciones?}};
+    todas-- sí --&gt;fin([Fin]);
+    todas-- no --&gt;filtrar[Filtra por estación &lt;br /&gt;definida en regla];
+    filtrar--&gt;fin;</div>
+<h4 id="diagrama-para-reglas-de-tipo-de-ambito">Diagrama para reglas de tipo de ámbito<a class="headerlink" href="#diagrama-para-reglas-de-tipo-de-ambito" title="Permanent link">&para;</a></h4>
+<p>Diagrama que describe como se filtran las mediciones para una regla de
+tipo de ámbito.</p>
+<div class="mermaid">graph LR;
+    inicio([Inicio])--&gt;todos{{en todos los tipos de ámbito?}};
+    todos-- sí --&gt;fin([Fin]);
+    todos-- no --&gt;filtrar[Filtra por tipo de ámbito &lt;br /&gt;definido en regla];
+    filtrar--&gt;fin;</div>
+<h4 id="diagrama-para-reglas-de-ambito">Diagrama para reglas de ámbito<a class="headerlink" href="#diagrama-para-reglas-de-ambito" title="Permanent link">&para;</a></h4>
+<p>Diagrama que describe como se filtran las mediciones para una regla de
+ámbito.</p>
+<div class="mermaid">graph LR;
+    inicio([Inicio])--&gt;todos{{en todos los ámbitos?}};
+    todos-- sí --&gt;fin([Fin]);
+    todos-- no --&gt;filtrar[Filtra por ámbito &lt;br /&gt;definido en regla];
+    filtrar--&gt;fin;</div>
+<h3 id="imagenes">Imágenes<a class="headerlink" href="#imagenes" title="Permanent link">&para;</a></h3>
+<p>En la sección Imágenes del Panel de Usuario se listan las imágenes ráster,
+producto de los procesos automáticos del módulo de observación terrestre
+(cobertura verde, loma perdida, etc). En la tabla figura el período
+correspondiente al producto y el nombre de la imagen.</p>
+<p><img alt="" src="../img/admin-images1.png" /></p>
+<p>Desde esta lista se pueden descargar en formato GeoTIFF hacinedo clic en el
+ícono de Descarga. También se puede obtener una URL del servidor XYZ de
+<em>tiles</em>, para poder incorporar esa imagen como capa en otras aplicaciones
+GIS, como QGIS o Leaflet.</p>
+<p><img alt="" src="../img/admin-images2.png" /></p>
+<h3 id="perfil">Perfil<a class="headerlink" href="#perfil" title="Permanent link">&para;</a></h3>
+<p>En la sección Perfil, el usuario puede:</p>
+<ul>
+<li>Modificar su dirección de e-mail</li>
+<li>Activar o desactivar el envío de notificaciones de alerta por e-mail</li>
+<li>Reestablecer la contraseña</li>
+</ul>
+<p><img alt="" src="../img/admin-profile1.png" /></p>
+<h2 id="administradores">Administradores<a class="headerlink" href="#administradores" title="Permanent link">&para;</a></h2>
+<p>Los administradores tienen la capacidad de registrar nuevos usuarios y
+administradores, revocar el acceso a usuarios existentes, administrar los
+ámbitos y las estaciones meteorológicas.</p>
+<p>Puede acceder al panel administrador de SatLomas ingresando aquí:</p>
+<ul>
+<li><a href="https://api.satlomas.pe.undp.org/admin">https://api.satlomas.pe.undp.org/admin</a></li>
+</ul>
+<p>Para entrar deberá ingresar el mismo nombre de usuario y contraseña con la
+que ingresa al panel de usuario de SatLomas.</p>
+<h3 id="panel-de-administracion">Panel de administración<a class="headerlink" href="#panel-de-administracion" title="Permanent link">&para;</a></h3>
+<p>Desde el panel de administración podrá acceder a los diferentes modelos de
+las aplicaciones internas de la plataforma. Muchas de ellas son de solo
+lectura ya que no están pensadas para ser modificadas desde el panel
+administador, pero a efectos de depuración y testeo se mantuvieron.</p>
+<p><img alt="" src="../img/backend-admin1.png" /></p>
+<h3 id="usuarios_1">Usuarios<a class="headerlink" href="#usuarios_1" title="Permanent link">&para;</a></h3>
+<p>Desde la sección Usuarios puede crear nuevos usuarios, modificar alguno
+existente o desactivarlo.</p>
+<p><img alt="" src="../img/backend-admin2.png" /></p>
+<p>Un usuario tiene 2 tipos de permisos:</p>
+<ul>
+<li><strong>Activo</strong>: Determina si el usuario está activo o no. Puede desmarcar esta
+  opcion sobre un usuario existente para desactivarlo en vez de borrarlo.</li>
+<li><strong>Es staff</strong>: Indica si el usuario puede entrar al sitio de administrador.
+  Un administrador tiene este casillero activado.</li>
+</ul>
+<p><img alt="" src="../img/backend-admin3.png" /></p>
+<p>En caso de querer registrar un nuevo usuario, deberá escribir un nombre de
+usuario y una contraseña.</p>
+<p><img alt="" src="../img/backend-admin4.png" /></p>
+<h3 id="ambitos">Ámbitos<a class="headerlink" href="#ambitos" title="Permanent link">&para;</a></h3>
+<p>En la sección de Ámbitos (<em>Scopes</em>) se pueden listar, modificar, eliminar o
+agregar nuevos ámbitos.</p>
+<p><img alt="" src="../img/backend-admin5.png" /></p>
+<p>Al editar un ámbito, o crear uno nuevo, se puede asignar un nombre y tipo de
+ámbito, y dibujar sobre un mapa un multipolígono para la geometría. También
+es posible cargar un archivo vectorial en formato GeoJSON. Este archivo
+vectorial debe tener un único <em>feature</em> con un multipolígono o polígono de
+geometría.</p>
+<p><img alt="" src="../img/backend-admin6.png" /></p>
+<h3 id="estaciones-meteorologicas_1">Estaciones meteorológicas<a class="headerlink" href="#estaciones-meteorologicas_1" title="Permanent link">&para;</a></h3>
+<p>En la sección de Estaciones Meteorológicas (<em>Stations</em>) se pueden listar,
+modificar, eliminar o agregar nuevas estaciones meteorológicas (Station) y
+nuevos sitios (Site).</p>
+<p><img alt="" src="../img/admin-stations-1.png" /></p>
+<p>Al momento de crear un nuevo sitio, es necesario asegurarse que la estación
+esté creada primero. Cada estación tiene un código unívoco que las identifica.
+La plataforma solamente cargará los datos que recibe si reconoce el código,
+dado que los datos se asocian exactamente a una estación.</p>
+<p>El código (<em>code</em>) de la estación debe coincidir con el código asignado a los
+sensores al momento de la carga de mediciones.</p>
+<p>También se incluye un campo de metadatos en formato JSON, en caso de que sea
+necesario guardar información externa a la plataforma.</p>
+<p><img alt="" src="../img/admin-stations-3.png" /></p>
+<p>Al editar o crear un Sitio, se le debe asignar un nombre, las coordenadas
+geográficas (en proyección WGS84), y opcionalmente asociarlo a una estación
+cargada. Esta asociación puede hacerle luego en una edición posterior. También
+existe la posibilidad de agregarle atributos opcionales relacionados con el
+sitio.</p>
+<p><img alt="" src="../img/admin-stations-2.png" /></p>
+<h4 id="traslado-de-estaciones">Traslado de estaciones<a class="headerlink" href="#traslado-de-estaciones" title="Permanent link">&para;</a></h4>
+<p>Dado que la estaciones pueden ser trasladadas de un sitio a otro, la plataforma
+ofrece un mecanismo que permite realizar el traslado, sin pérdida de
+continuidad y consistencia de los datos a lo largo del tiempo.</p>
+<p>Suponiendo que se quiere trasladar una estación del sitio "A" al sitio "B", a
+modo de ejemplo se procedería de la siguiente manera:</p>
+<ol>
+<li>Se desconecta y desacopla la estación ubicada en el sitio A</li>
+<li>En el administrador, se edita el sitio "A" y se desasocia la estación. Este
+   paso se realiza para que, al momento de encender la estación ya ubicado en
+   el sitio B, no se carguen erroneamente datos asociados al sitio A.</li>
+<li>Se traslada la estación al sitio B.</li>
+<li>En el administrador, se crea el sitio B (si no existía), y se asocia la
+   estación al sitio B.</li>
+<li>Se enciende la estación, ya conectada a la red LoraWan.</li>
+</ol>
+<p>Es importante asegurarse que la estación esté desasociada del sitio original
+antes del traslado, y por otro lado, que la estación ya esté asociada al sitio
+nuevo antes de volver a conectarse.  De esta manera, se podrá asegurar que los
+datos estén cargados correctamente y no haya pérdida de información durante el
+proceso.</p>
+<p>En caso de interrupciones de conectividad o de energía en las estaciones, la
+plataforma no se verá afectada y volverá a recolectar datos automáticamente.</p>
+<h3 id="auditoria">Auditoría<a class="headerlink" href="#auditoria" title="Permanent link">&para;</a></h3>
+<p>La plataforma tiene integrado un sistema de auditoría para todas las acciones
+realizadas por usuarios y por los procesos automáticos. Podrá consultarla
+yendo a la Entradas de registro (en <em>Audit Log</em>).</p>
+<p><img alt="" src="../img/backend-auditlog1.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Anterior: Inicio" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Inicio
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../methodology/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Metodología" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Metodología
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copiar al portapapeles", "clipboard.copied": "Copiado al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
